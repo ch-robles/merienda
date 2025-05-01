@@ -4,16 +4,28 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public AudioSource footstep;
+	public CharacterController controller;
+	public float speed = 2.5f;
+	public float turnSmoothTime = 0.1f;
+	public float turnSmoothVelocity;
+	public Transform cam;
+	public Animator playerAnim;
+
+
+	public AudioSource footstep;
     public Manager manager;
     [Header("Animator")]
-    public Animator anim;
+
+    public bool isGrounded = true;
+    public float gravity = -9.81f;
+    public float jumpHeight = 1.5f;
+    private Vector3 velocity;
 
     // Start is called before the first frame update
     void Start()
     {
         // manager = FindObjectOfType<Manager>();
-        anim = GetComponent<Animator>();
+        playerAnim = GetComponent<Animator>();
     }
 
 
@@ -21,26 +33,69 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
 
-        float speed = 4.2f;
-        float x = Input.GetAxis("Horizontal");
-        float y = 0;
-        float z = Input.GetAxis("Vertical");
-        gameObject.transform.Translate(x * speed * Time.deltaTime, y, z * speed * Time.deltaTime);
+		float horizontal = Input.GetAxisRaw("Horizontal");
+		float vertical = Input.GetAxisRaw("Vertical");
+		Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
+
+		/*if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
+		{
+			footstep.enabled = true;
+		}
+		else
+		{
+			footstep.enabled = false;
+		}*/
 
 
-        /*
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D)){
-            footstep.enabled = true;
-        } else{
-            footstep.enabled = false;
-        }*/
+		if (direction.magnitude >= 0.1f)
+		{
+			float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
+			float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
+			transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
-        if (speed >= 5) {
-            anim.SetBool("isWalking", true);
-        } else {
-            anim.SetBool("isWalking", false);
-        }
+			Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+			controller.Move(moveDir.normalized * speed * Time.deltaTime);
 
+		}
 
-    }
+		if (direction.magnitude != 0)
+		{
+			//playerAnim.SetBool("isRunning", true);
+
+		}
+
+		if (direction.magnitude == 0)
+		{
+			//playerAnim.SetBool("isRunning", false);
+		}
+
+		// Ground check 
+		if (controller.isGrounded && velocity.y < 0)
+		{
+			velocity.y = 0f;
+			isGrounded = true;
+		}
+
+		// Jumping
+		if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+		{
+			velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+
+			isGrounded = false;
+		}
+
+		if (isGrounded == false)
+		{
+			playerAnim.SetBool("isJumping", true);
+		}
+		if (isGrounded == true)
+		{
+			playerAnim.SetBool("isJumping", false);
+		}
+
+		velocity.y += gravity * Time.deltaTime;
+
+		controller.Move(velocity * Time.deltaTime);
+
+	}
 }
