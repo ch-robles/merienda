@@ -11,11 +11,13 @@ public class HunterCaller : MonoBehaviour
     // public bool roamNow = false;
     private float aggroVal = 50;
     private float maxTime = 6;
-    private float maxDistance = 20;
+    private float maxDistance = 100;
+    public Animator anim;
+	bool walkReady; // to trigger pathfinding "walk" animation wao
 
     // Update is called once per frame
 
-    void Start(){
+    public void /*Start*/ Hunt(){
         Positioner();
         StartCoroutine(Roaming());
     }
@@ -23,6 +25,7 @@ public class HunterCaller : MonoBehaviour
     public void Positioner(){
         // closer to target when more aggressive
         float dist = maxDistance - ((aggroVal/100)*maxDistance);
+        Debug.Log("Dist: " + dist);
 
         // randomize! rn its not
         hunter.transform.position = player.transform.position + new Vector3(dist, 0, dist);
@@ -39,7 +42,8 @@ public class HunterCaller : MonoBehaviour
         
         Debug.Log(secs);
         hunter.SetActive(true);
-        StartCoroutine(hunterMovement.FollowTarget());
+        // StartCoroutine(hunterMovement.FollowTarget());
+        hunterMovement.Move();
 
         yield return null;
     }
