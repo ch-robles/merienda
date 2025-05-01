@@ -679,12 +679,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5741894702909499061}
-  - component: {fileID: 2556063461644972589}
   - component: {fileID: 5465331464931044930}
   - component: {fileID: 2762863435320246810}
   - component: {fileID: 8388174136932155358}
   - component: {fileID: 8859768862701131904}
   - component: {fileID: 6862339570101170701}
+  - component: {fileID: 6205107356522134016}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -700,41 +700,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3327775744856701231}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -188.9, y: 0, z: 116.48}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6179763640893719077}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!54 &2556063461644972589
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3327775744856701231}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 112
-  m_CollisionDetection: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &5465331464931044930
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -752,7 +725,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.40069103
   m_Height: 1.8991902
@@ -983,9 +956,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a861bca619b3b694e8bdb41f5c731b41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  controller: {fileID: 6205107356522134016}
+  speed: 2.5
+  turnSmoothTime: 0.1
+  turnSmoothVelocity: 0
+  cam: {fileID: 0}
+  playerAnim: {fileID: 0}
   footstep: {fileID: 0}
-  manager: {fileID: 0}
-  anim: {fileID: 4634292252942297861}
+  manager: {fileID: 2171618049175534152, guid: dc9bfca649d4cc1469f3dd18800547ea, type: 3}
+  isGrounded: 1
+  gravity: -9.81
+  jumpHeight: 1.5
+--- !u!143 &6205107356522134016
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3327775744856701231}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Height: 1.89919
+  m_Radius: 0.400691
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0.8933486, z: -0.05258369}
 --- !u!1 &3642931105239849013
 GameObject:
   m_ObjectHideFlags: 0
