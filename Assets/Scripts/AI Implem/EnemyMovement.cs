@@ -25,6 +25,7 @@ public class EnemyMovement : MonoBehaviour
 
         anim = gameObject.GetComponent<Animator>();
         StartCoroutine(FollowTarget());
+        anim.SetBool("hunterWalk", false);
 		// walkReady = false;
     }
 
