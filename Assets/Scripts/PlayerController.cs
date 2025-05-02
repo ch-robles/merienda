@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
 
     public bool isGrounded = true;
     public float gravity = -9.81f;
-    public float jumpHeight = 1.5f;
+    public float jumpHeight = 2f;
     private Vector3 velocity;
 
     // Start is called before the first frame update
