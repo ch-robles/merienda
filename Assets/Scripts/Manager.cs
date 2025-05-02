@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -10,6 +10,7 @@ public class Manager : MonoBehaviour
     public static Manager instance;
 
     public static bool GameIsPaused = false;
+    // [SerializeField] Animator transitionAnim;
  
 
     void Awake()
@@ -116,6 +117,18 @@ public class Manager : MonoBehaviour
         // OnRaceStart();
         Debug.Log("Restart");
     }
+
+    // IEnumerator Chase(){
+    //     // // play animations here
+
+    //     Debug.Log("Game Mode: Chase");
+
+    //     transitionAnim.SetTrigger("End");
+    //     yield return WaitForSeconds(10);
+    //     SceneManager.LoadScene("HuntingGrounds");
+    //     transitionAnim.SetTrigger("Start");
+        
+    // }
 
     /*public void StartGame()
     {

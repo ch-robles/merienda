@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/HuntingGrounds.unity
+    guid: ea7f92a5837007443ab6e12c82f30914
   m_configObjects: {}
