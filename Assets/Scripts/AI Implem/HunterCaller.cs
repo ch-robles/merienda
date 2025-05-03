@@ -9,7 +9,7 @@ public class HunterCaller : MonoBehaviour
     public GameObject hunter, player;
     public EnemyMovement hunterMovement;
     // public bool roamNow = false;
-    private float aggroVal = 50;
+    private float aggroVal;
     private float maxTime = 6;
     private float maxDistance = 100;
     public Animator anim;
@@ -18,6 +18,8 @@ public class HunterCaller : MonoBehaviour
     // Update is called once per frame
 
     public void /*Start*/ Hunt(){
+        aggroVal = AggroLevel.instance.GetAggroLevel();
+        Debug.Log("[HUNTER CALLER] AggroLevel: " + aggroVal);
         Positioner();
         StartCoroutine(Roaming());
     }
