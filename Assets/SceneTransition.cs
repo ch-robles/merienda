@@ -26,7 +26,8 @@ public class SceneTransition : MonoBehaviour
 
         yield return new WaitForSeconds(1);
 
-        SceneManager.LoadScene("HuntingGrounds");
+        // SceneManager.LoadScene("HuntingGrounds");
+        SceneManager.LoadScene("[TREE TEST] HuntingGrounds");
 
         yield return new WaitForSeconds(2);
 
