@@ -836,5 +836,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpscarePrefab: {fileID: 9220446558165955136, guid: bd86aaec340b03240b106de6669c6ddd, type: 3}
+  enemy: {fileID: 0}
   player: {fileID: 3327775744856701231, guid: da97c4ec80417d94fa58859ba42b7d08, type: 3}
+  playerVCam: {fileID: 0}
   playerMovementScript: {fileID: 0}
+  jumpscareSound: {fileID: 8300000, guid: bb8718f9dc286344a9e05bf7324774a8, type: 3}
