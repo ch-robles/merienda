@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/[OLD] HuntingGrounds.unity
-    guid: ea7f92a5837007443ab6e12c82f30914
-  - enabled: 1
     path: Assets/Scenes/[TREE TEST] HuntingGrounds.unity
     guid: 69ec799dcdadeb74e9370f40b3069572
+  - enabled: 1
+    path: Assets/Scenes/Level1.unity
+    guid: b165e6a2a1b8da6499ef52d41399c2a2
   m_configObjects: {}
