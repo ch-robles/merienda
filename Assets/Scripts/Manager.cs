@@ -84,12 +84,6 @@ public class Manager : MonoBehaviour
         Debug.Log("Win");
     }
 
-    public void Draw()
-    {
-        AudioManager.instance.Win();
-        Pause();
-        Debug.Log("Draw");
-    }
 
 
     // testing purp
