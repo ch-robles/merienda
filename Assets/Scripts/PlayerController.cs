@@ -37,14 +37,14 @@ public class PlayerController : MonoBehaviour
 		float vertical = Input.GetAxisRaw("Vertical");
 		Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
 
-		/*if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
+		if (isGrounded && (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D)))
 		{
 			footstep.enabled = true;
 		}
 		else
-		{
+        {
 			footstep.enabled = false;
-		}*/
+		}
 
 
 		if (direction.magnitude >= 0.1f)
@@ -86,11 +86,11 @@ public class PlayerController : MonoBehaviour
 
 		if (isGrounded == false)
 		{
-			playerAnim.SetBool("isJumping", true);
+			//playerAnim.SetBool("isJumping", true);
 		}
 		if (isGrounded == true)
 		{
-			playerAnim.SetBool("isJumping", false);
+			//playerAnim.SetBool("isJumping", false);
 		}
 
 		velocity.y += gravity * Time.deltaTime;

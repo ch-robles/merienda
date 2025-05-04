@@ -962,7 +962,7 @@ MonoBehaviour:
   turnSmoothVelocity: 0
   cam: {fileID: 0}
   playerAnim: {fileID: 0}
-  footstep: {fileID: 0}
+  footstep: {fileID: 8388174136932155358}
   manager: {fileID: 2171618049175534152, guid: dc9bfca649d4cc1469f3dd18800547ea, type: 3}
   isGrounded: 1
   gravity: -9.81
