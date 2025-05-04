@@ -1,18 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.AI.Navigation;
 using UnityEngine;
 
+[RequireComponent(typeof(NavMeshSurface))]
 public class BakeNavMesh : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    private NavMeshSurface surface;
+    void Awake(){
+        surface = GetComponent<NavMeshSurface>();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void Bake(){
+        surface.BuildNavMesh();
+        Debug.Log("[BAKE NAV MESH] NavMesh built.");
     }
 }
