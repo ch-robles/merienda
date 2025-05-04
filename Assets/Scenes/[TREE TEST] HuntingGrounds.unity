@@ -5281,7 +5281,7 @@ Transform:
   m_GameObject: {fileID: 743131568}
   serializedVersion: 2
   m_LocalRotation: {x: 0.6163606, y: -0.28507194, z: 0.25530496, w: 0.6882245}
-  m_LocalPosition: {x: 169.657, y: 2.1853259, z: 55.417667}
+  m_LocalPosition: {x: 169.61394, y: 2.1790555, z: 55.47121}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5527,6 +5527,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6385f4933659f5e4ca5776a3519f7611, type: 3}
+--- !u!1 &758856929 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6604809431266514394, guid: 6385f4933659f5e4ca5776a3519f7611, type: 3}
+  m_PrefabInstance: {fileID: 758856928}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &766628818
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9585,6 +9590,10 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 966375961}
+    - target: {fileID: 6862339570101170701, guid: da97c4ec80417d94fa58859ba42b7d08, type: 3}
+      propertyPath: torch
+      value: 
+      objectReference: {fileID: 758856929}
     - target: {fileID: 6862339570101170701, guid: da97c4ec80417d94fa58859ba42b7d08, type: 3}
       propertyPath: manager
       value: 

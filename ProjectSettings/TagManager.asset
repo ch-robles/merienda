@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Treehouse
   - Trees
+  - Torch
   layers:
   - Default
   - TransparentFX

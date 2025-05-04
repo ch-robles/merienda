@@ -15,8 +15,7 @@ public class JumpscareTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!hasTriggered && other.CompareTag("Player"))
-        {
+        if (!hasTriggered && other.CompareTag("Player")) {
             hasTriggered = true;
             TriggerJumpscare(other.gameObject);
         }
@@ -36,8 +35,7 @@ public class JumpscareTrigger : MonoBehaviour
 
         // Make sure main camera's CinemachineBrain does an instant cut
         var brain = Camera.main.GetComponent<CinemachineBrain>();
-        if (brain != null)
-        {
+        if (brain != null) {
             brain.m_DefaultBlend.m_Style = CinemachineBlendDefinition.Style.Cut;
             brain.m_DefaultBlend.m_Time  = 0f;
         }
@@ -53,8 +51,7 @@ public class JumpscareTrigger : MonoBehaviour
 
         // Find & configure the jumpscare Virtual Camera
         var vcam = inst.GetComponentInChildren<CinemachineVirtualCamera>(true);
-        if (vcam != null)
-        {
+        if (vcam != null) {
             vcam.gameObject.SetActive(true);
             vcam.Priority = 100;
 
@@ -64,7 +61,6 @@ public class JumpscareTrigger : MonoBehaviour
 
             var comp = vcam.GetCinemachineComponent<CinemachineComposer>();
             if (comp != null) comp.m_TrackedObjectOffset = Vector3.zero;
-        }
-        else Debug.LogWarning("No camera found in jumpscare prefab!");
+        } else Debug.LogWarning("No camera found in jumpscare prefab!");
     }
 }
