@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39d40356c24708a499f1be9fd13bc0db, type: 3}
   m_Name: Level1
   m_EditorClassIdentifier: 
-  TerrainWidth: 250
-  TerrainLength: 250
+  TerrainWidth: 300
+  TerrainLength: 300
   TerrainHeight: 1000
   StartPosition: {x: 0, y: 0, z: 0}
   TilesX: 1
@@ -48,7 +48,7 @@ MonoBehaviour:
   EnableGuid: 1
   EnableClearExistingData: 0
   EnableLightingAutoBake: 0
-  PresetPath: Assets/Terrain/MainMenu.asset
+  PresetPath: Assets/Terrain/HuntingGrounds.asset
   ShowGroupSettings: 0
   ShowHeightmapSettings: 0
   ShowGizmoSettings: 0
