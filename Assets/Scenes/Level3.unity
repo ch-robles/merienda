@@ -1775,6 +1775,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1464661749}
     - target: {fileID: 6862339570101170701, guid: da97c4ec80417d94fa58859ba42b7d08, type: 3}
+      propertyPath: torch
+      value: 
+      objectReference: {fileID: 1879745542}
+    - target: {fileID: 6862339570101170701, guid: da97c4ec80417d94fa58859ba42b7d08, type: 3}
       propertyPath: jumpHeight
       value: 2
       objectReference: {fileID: 0}
@@ -2317,6 +2321,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6385f4933659f5e4ca5776a3519f7611, type: 3}
+--- !u!1 &1879745542 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6604809431266514394, guid: 6385f4933659f5e4ca5776a3519f7611, type: 3}
+  m_PrefabInstance: {fileID: 1879745541}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2073498804
 PrefabInstance:
   m_ObjectHideFlags: 0
