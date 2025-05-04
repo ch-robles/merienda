@@ -6,8 +6,8 @@ TagManager:
   tags:
   - Treehouse
   - Trees
-  - Boundary
-  - Ladder
+  - MamonHouse
+  - NoMamonHouse
   layers:
   - Default
   - TransparentFX
