@@ -725,6 +725,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 07659708049899b4f9a5af9cbed962d2, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6799814357228916399}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 07659708049899b4f9a5af9cbed962d2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3718509233182034833}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 07659708049899b4f9a5af9cbed962d2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 701400224434957239}
   m_SourcePrefab: {fileID: 100100000, guid: 07659708049899b4f9a5af9cbed962d2, type: 3}
 --- !u!4 &580575900155770980 stripped
 Transform:
@@ -794,3 +800,41 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!136 &3718509233182034833
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9220446558165955136}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3.3926175
+  m_Height: 11.884552
+  m_Direction: 1
+  m_Center: {x: 0, y: 5.442275, z: 1.0302055}
+--- !u!114 &701400224434957239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9220446558165955136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbd673ce7f66e6249863ac797dd6de81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpscarePrefab: {fileID: 9220446558165955136, guid: bd86aaec340b03240b106de6669c6ddd, type: 3}
+  player: {fileID: 3327775744856701231, guid: da97c4ec80417d94fa58859ba42b7d08, type: 3}
+  playerMovementScript: {fileID: 0}
