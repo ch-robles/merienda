@@ -33,7 +33,7 @@ public class AggroLevel : MonoBehaviour
     }
 
     // when game is not started, or when finishing level
-    void ResetAggro(){
+    public void ResetAggro(){
         aggroLevel = 0;
     }
 

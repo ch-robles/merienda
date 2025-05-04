@@ -61,9 +61,9 @@ public class MamonHouse : MonoBehaviour
             Destroy(other);
         }
 
-        if (other.CompareTag("NoMamon"))
+        if (other.CompareTag("NoMamonHouse"))
         {
-            subtitle = MamonSuccess[rnd.Next(0, NoMamon.Length)];
+            subtitle = NoMamon[rnd.Next(0, NoMamon.Length)];
             Invoke("DeleteText", 3);
         }
     }
