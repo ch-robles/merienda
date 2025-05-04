@@ -3184,7 +3184,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 0.43529412, g: 0.3529412, b: 0.36862746, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.3
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -4319,9 +4319,21 @@ PrefabInstance:
       propertyPath: manager
       value: 
       objectReference: {fileID: 1950955707}
+    - target: {fileID: 3886798339210217959, guid: 6385f4933659f5e4ca5776a3519f7611, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3886798339210217959, guid: 6385f4933659f5e4ca5776a3519f7611, type: 3}
+      propertyPath: m_CookieSize
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5082542453158986427, guid: 6385f4933659f5e4ca5776a3519f7611, type: 3}
       propertyPath: m_Name
       value: PlayerPOV
+      objectReference: {fileID: 0}
+    - target: {fileID: 6604809431266514394, guid: 6385f4933659f5e4ca5776a3519f7611, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9222359386083684933, guid: 6385f4933659f5e4ca5776a3519f7611, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4368,6 +4380,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6385f4933659f5e4ca5776a3519f7611, type: 3}
+--- !u!1 &1643838681 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6604809431266514394, guid: 6385f4933659f5e4ca5776a3519f7611, type: 3}
+  m_PrefabInstance: {fileID: 1643838680}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1654956904
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5201,6 +5218,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1146866018}
     - target: {fileID: 6862339570101170701, guid: da97c4ec80417d94fa58859ba42b7d08, type: 3}
+      propertyPath: torch
+      value: 
+      objectReference: {fileID: 1643838681}
+    - target: {fileID: 6862339570101170701, guid: da97c4ec80417d94fa58859ba42b7d08, type: 3}
       propertyPath: controller
       value: 
       objectReference: {fileID: 2084299173}
@@ -5208,6 +5229,10 @@ PrefabInstance:
       propertyPath: jumpHeight
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6862339570101170701, guid: da97c4ec80417d94fa58859ba42b7d08, type: 3}
+      propertyPath: torchPrefab
+      value: 
+      objectReference: {fileID: 1643838681}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6723,6 +6748,10 @@ PrefabInstance:
     - target: {fileID: 9220446558165955136, guid: ca7dae123fa01ee469013d2ece4fb513, type: 3}
       propertyPath: m_Name
       value: HunterUnity
+      objectReference: {fileID: 0}
+    - target: {fileID: 9220446558165955136, guid: ca7dae123fa01ee469013d2ece4fb513, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

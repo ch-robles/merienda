@@ -21,6 +21,11 @@ public class PlayerController : MonoBehaviour
     public float jumpHeight = 2f;
     private Vector3 velocity;
 
+	[Header("Torch Settings")]
+	public GameObject torch;
+    public KeyCode toggleKey = KeyCode.F; // Press F to toggle
+	private bool torchOn = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -45,6 +50,11 @@ public class PlayerController : MonoBehaviour
 		{
 			footstep.enabled = false;
 		}*/
+
+		if (torch != null && Input.GetKeyDown(toggleKey)){
+            torchOn = !torchOn;
+            torch.SetActive(torchOn); 
+        }
 
 
 		if (direction.magnitude >= 0.1f)
