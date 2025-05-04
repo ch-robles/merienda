@@ -20,26 +20,31 @@ public class SceneChanger : MonoBehaviour
             case "Level1":
                 Manager.instance.VillageAbove();
                 Manager.instance.SetLevel(1);
+                Manager.instance.Resume();
                 break;
             
             case "Level2":
                 Manager.instance.VillageAbove();
                 Manager.instance.SetLevel(2);
+                Manager.instance.Resume();
                 break;
             
             case "Level3":
                 Manager.instance.VillageAbove();
                 Manager.instance.SetLevel(3);
+                Manager.instance.Resume();
                 break;
 
             // need ng main menu ditow
             case "[TREE TEST] HuntingGrounds":
                 Manager.instance.ForestBelow();
+                Manager.instance.Resume();
                 break;
             
             default:
                 Manager.instance.ForestBelow();
                 AggroLevel.instance.ResetAggro();
+                Manager.instance.QuitGame();
                 break;
         }
        
