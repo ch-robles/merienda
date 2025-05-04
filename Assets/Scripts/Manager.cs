@@ -11,7 +11,8 @@ public class Manager : MonoBehaviour
 
     public static bool GameIsPaused = false;
     // [SerializeField] Animator transitionAnim;
- 
+    int level = 1;
+    bool running = true;
 
     void Awake()
     {
@@ -87,7 +88,15 @@ public class Manager : MonoBehaviour
     }
 
 
+    // testing purp
 
+    public int GetLevelNow(){
+        return level;
+    }
+
+    public bool RunningBa(){
+        return running;
+    }
 
     //----------------------------//
 
