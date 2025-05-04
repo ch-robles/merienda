@@ -10,6 +10,7 @@ public class JumpscareTrigger : MonoBehaviour
     public GameObject player;                 // Reference to player
     public CinemachineVirtualCamera playerVCam;
     public PlayerController playerMovementScript;// Movement script to disable
+    public AudioClip jumpscareSound;  // Assign in inspector
 
     private bool hasTriggered = false;
 
@@ -43,6 +44,10 @@ public class JumpscareTrigger : MonoBehaviour
         // Deactivate your normal vcam
         if (playerVCam != null)
             playerVCam.gameObject.SetActive(false);
+
+        if (jumpscareSound != null) {
+            AudioSource.PlayClipAtPoint(jumpscareSound, player.transform.position);
+        }
 
         // Instantiate jumpscare prefab at player's position
         GameObject inst = Instantiate(jumpscarePrefab, player.transform.position, Quaternion.identity);
