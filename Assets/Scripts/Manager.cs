@@ -14,6 +14,9 @@ public class Manager : MonoBehaviour
     // [SerializeField] Animator transitionAnim;
     int level = 1;
     bool running = true;
+    bool start = false;
+    [SerializeField] AggroLevel aggro;
+    Vector3 checkpoint;
 
     void Awake()
     {
@@ -81,12 +84,6 @@ public class Manager : MonoBehaviour
         Debug.Log("Win");
     }
 
-    public void Draw()
-    {
-        AudioManager.instance.Win();
-        Pause();
-        Debug.Log("Draw");
-    }
 
 
     // testing purp
@@ -97,6 +94,71 @@ public class Manager : MonoBehaviour
 
     public bool RunningBa(){
         return running;
+    }
+
+    // public void RunningLevel(){
+    //     start = true;
+    // }
+
+    // public void EndingLevel(){
+    //     start = false;
+    // }
+
+    public bool GetState(){
+        return start;
+    }
+
+    public void SetState(bool startBool){
+        start = startBool; 
+    }
+
+    public void SetLevel(int levelNo){
+        level = levelNo; 
+    }
+
+    public int GetLevel(){
+        return level;
+    }
+
+    public void VillageAbove(){
+        aggro.StartLevel();
+    }
+
+    public void ForestBelow(){
+        aggro.ChaseScene();
+    }
+
+    public void SetCheckpoint(Vector3 checkpointPos){
+        checkpoint = checkpointPos;
+        Debug.Log("New checkpoint!");
+    }
+
+    public Vector3 GetCheckpoint(){
+        if(start){
+            return checkpoint;
+        } else {
+            switch(level){
+                case 1:
+                    Debug.Log("In Level 1");
+                    checkpoint = new Vector3(224.55f,19.022f,222.74f);
+                    return checkpoint;
+                    break;
+                case 2:
+                    Debug.Log("In Level 2");
+                    checkpoint = new Vector3(0,0,0);
+                    return checkpoint;
+                    break;
+                case 3: 
+                    Debug.Log("In Level 3");
+                    checkpoint = new Vector3(0,0,0);
+                    return checkpoint;
+                    break;
+            }
+        }
+
+        Vector3 defaultPos = new Vector3(0f,0f,0f);
+        return defaultPos;
+        
     }
 
     //----------------------------//
