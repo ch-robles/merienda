@@ -25,12 +25,12 @@ public class TreeSeperator : MonoBehaviour
             lenght = terrain.terrainData.size.z;
             width = terrain.terrainData.size.x;
             hight = terrain.terrainData.size.y;
-            Debug.Log("Terrain Size is :" + width + " , " + hight + " , " + lenght);
+            // Debug.Log("Terrain Size is :" + width + " , " + hight + " , " + lenght);
     
             int i = 0;
             GameObject parent = new GameObject("Tree_Obstacles");
     
-            Debug.Log("Adding " + Obstacle.Length + " navMeshObstacle Components for Trees");
+            // Debug.Log("Adding " + Obstacle.Length + " navMeshObstacle Components for Trees");
             foreach (TreeInstance tree in Obstacle)
             {
                 Vector3 worldPosition = Vector3.Scale(tree.position, terrain.terrainData.size) + terrain.transform.position;
@@ -49,7 +49,7 @@ public class TreeSeperator : MonoBehaviour
                 if (terrain.terrainData.treePrototypes[tree.prototypeIndex].prefab.GetComponent<Collider>() == null)
                 {
                     isError = true;
-                    Debug.LogError("ERROR  There is no CapsuleCollider or BoxCollider attached to ''" + terrain.terrainData.treePrototypes[tree.prototypeIndex].prefab.name + "'' please add one of them.");
+                    // Debug.LogError("ERROR  There is no CapsuleCollider or BoxCollider attached to ''" + terrain.terrainData.treePrototypes[tree.prototypeIndex].prefab.name + "'' please add one of them.");
                     break;
                 }
                 Collider coll = terrain.terrainData.treePrototypes[tree.prototypeIndex].prefab.GetComponent<Collider>();
@@ -77,14 +77,14 @@ public class TreeSeperator : MonoBehaviour
                 else
                 {
                     isError = true;
-                    Debug.LogError("ERROR  There is no CapsuleCollider or BoxCollider attached to ''" + terrain.terrainData.treePrototypes[tree.prototypeIndex].prefab.name + "'' please add one of them.");
+                    // Debug.LogError("ERROR  There is no CapsuleCollider or BoxCollider attached to ''" + terrain.terrainData.treePrototypes[tree.prototypeIndex].prefab.name + "'' please add one of them.");
                     break;
                 }
     
     
                 i++;
             }
-            if (!isError) Debug.Log("All " + Obstacle.Length + " NavMeshObstacles were succesfully added to your Scene, Horray !");
+            if (!isError) // Debug.Log("All " + Obstacle.Length + " NavMeshObstacles were succesfully added to your Scene, Horray !");
 
             terrainCount++;
         }

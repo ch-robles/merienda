@@ -25,6 +25,9 @@ public class AggroLevel : MonoBehaviour
 
     public void CalculateAggroLevel(){
         // if gamestate is running
-        aggroLevel = 50;
+        // aggroLevel = 50;
+        // aggroLevel = Random.Range(0,100);
+        aggroLevel = 25.0f;
+        Debug.Log("[AGGRO LEVEL] AggroLevel: " + aggroLevel);
     }
 }
