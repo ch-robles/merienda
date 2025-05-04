@@ -6,7 +6,8 @@ TagManager:
   tags:
   - Treehouse
   - Trees
-  - Torch
+  - Boundary
+  - Ladder
   layers:
   - Default
   - TransparentFX
