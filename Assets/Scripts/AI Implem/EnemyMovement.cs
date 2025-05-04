@@ -18,9 +18,10 @@ public class EnemyMovement : MonoBehaviour
     public void Move()
     {
         aggroVal = AggroLevel.instance.GetAggroLevel();
-        Debug.Log("[ENEMY MOVEMENT] AggroLevel: " + aggroVal);
+        // Debug.Log("[ENEMY MOVEMENT] AggroLevel: " + aggroVal);
         Agent = GetComponent<NavMeshAgent>();
         float agentSpeed = maxSpeed*(aggroVal/100);
+        Debug.Log("[ENEMY MOVEMENT] ENEMY SPEED: " + agentSpeed);
 
         Agent.speed = agentSpeed;
         Debug.Log(agentSpeed);

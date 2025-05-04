@@ -20,11 +20,11 @@ public class HunterCaller : MonoBehaviour
     public void /*Start*/ Hunt(){
         aggroVal = AggroLevel.instance.GetAggroLevel();
         Debug.Log("[HUNTER CALLER] AggroLevel: " + aggroVal);
-        Positioner();
+        EnemyPositioner();
         StartCoroutine(Roaming());
     }
 
-    public void Positioner(){
+    public void EnemyPositioner(){
         // closer to target when more aggressive
         float dist = maxDistance - ((aggroVal/100)*maxDistance);
         Debug.Log("Dist: " + dist);

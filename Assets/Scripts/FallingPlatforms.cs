@@ -5,13 +5,13 @@ public class FallingPlatforms : MonoBehaviour
 {
     bool isFalling = false;
     float downspeed = 0;
-
+[SerializeField] float delay;
     void OnTriggerEnter(Collider collider)
     {
         //if Player Tagged object collides with collider then fall
         if (collider.gameObject.CompareTag("Player"))
         {
-            StartCoroutine(StartFallingWithDelay(1f)); // Adjust delay duration (1 second for my implentation) as needed
+            StartCoroutine(StartFallingWithDelay(delay)); // Adjust delay duration (1 second for my implentation) as needed
         }
     }
 
@@ -25,7 +25,7 @@ public class FallingPlatforms : MonoBehaviour
 
     void Update() {
        if(isFalling){
-        downspeed += Time.deltaTime/20;
+        downspeed += Time.deltaTime/10;
         transform.position = new Vector3(transform.position.x, 
         transform.position.y-downspeed,
         transform.position.z);

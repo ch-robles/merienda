@@ -10,11 +10,18 @@ public class ChaseExits : MonoBehaviour
     private List<int> areas;
     private int[] areasArray = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16};
     private int treehouseCount, areaNo;
+    float aggroVal;
 
     // Update is called once per frame
+
     void Start(){
-        // TEST: Choose 5 random areas, and then 
-        treehouseCount = 5;
+        aggroVal = AggroLevel.instance.GetAggroLevel();
+    }
+    public void /*Start*/SpawnExits(){
+
+        float treehouseCountCalc = 10 - ((aggroVal/100.0f)*10);
+        treehouseCount = Mathf.RoundToInt(treehouseCountCalc);
+        Debug.Log("[CHASE EXITS] Treehouses Needed: " + treehouseCountCalc);
         areas = new List<int>();
 
         while(treehouseCount != 0){
@@ -22,7 +29,7 @@ public class ChaseExits : MonoBehaviour
             areaNo = Random.Range(0,16);
             
             if (areasArray[areaNo] != 0){
-                Debug.Log("[CHASE EXITS] Area " + areasArray[areaNo] + " added.");
+                // Debug.Log("[CHASE EXITS] Area " + areasArray[areaNo] + " added.");
                 areas.Add(areasArray[areaNo]);
                 areasArray[areaNo] = 0;
                 treehouseCount--;
@@ -37,13 +44,13 @@ public class ChaseExits : MonoBehaviour
             // if 1, odd number becomes the treehouse
             if(decider == 0){
                 treehouse = (areas.ElementAt(i)*2)-1;
-                Debug.Log("[CHASE EXITS] Treehouse No.: " + treehouse);
+                // Debug.Log("[CHASE EXITS] Treehouse No.: " + treehouse);
             } 
             
             // else, even becomes treehouse
             else if (decider == 1){
                 treehouse = (areas.ElementAt(i)*2)-2;
-                Debug.Log("[CHASE EXITS] Treehouse No.: " + treehouse);
+                // Debug.Log("[CHASE EXITS] Treehouse No.: " + treehouse);
             }
 
             treeGroup.ElementAt(treehouse).transform.GetChild(0).gameObject.SetActive(true);
