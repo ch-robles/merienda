@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,7 +9,7 @@ using UnityEngine.SceneManagement;
 public class Manager : MonoBehaviour
 {
     public static Manager instance;
-
+    [SerializeField] float Mamons;
     public static bool GameIsPaused = false;
     // [SerializeField] Animator transitionAnim;
     int level = 1;
@@ -134,6 +135,11 @@ public class Manager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         // OnRaceStart();
         Debug.Log("Restart");
+    }
+
+    public float getMamons()
+    {
+        return (Mamons);
     }
 
     // IEnumerator Chase(){
