@@ -19,7 +19,9 @@ public class ChaseExits : MonoBehaviour
     }
     public void /*Start*/SpawnExits(){
 
-        Debug.Log("[CHASE EXITS] Treehouses Needed: " + (aggroVal / 100.0f));
+        float treehouseCountCalc = 10 - ((aggroVal/100.0f)*10);
+        treehouseCount = Mathf.RoundToInt(treehouseCountCalc);
+        Debug.Log("[CHASE EXITS] Treehouses Needed: " + treehouseCountCalc);
         areas = new List<int>();
 
         while(treehouseCount != 0){

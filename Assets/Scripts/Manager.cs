@@ -13,6 +13,7 @@ public class Manager : MonoBehaviour
     // [SerializeField] Animator transitionAnim;
     int level = 1;
     bool running = true;
+    [SerializeField] AggroLevel aggro;
 
     void Awake()
     {
@@ -96,6 +97,14 @@ public class Manager : MonoBehaviour
 
     public bool RunningBa(){
         return running;
+    }
+
+    public void VillageAbove(){
+        aggro.StartLevel();
+    }
+
+    public void ForestBelow(){
+        aggro.ChaseScene();
     }
 
     //----------------------------//
