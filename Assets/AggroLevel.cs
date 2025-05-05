@@ -20,20 +20,20 @@ public class AggroLevel : MonoBehaviour
     }
 
     // on play move
-    void StartLevel(){
+    public void StartLevel(){
         // CalculateAggroLevel();
         InvokeRepeating("CalculateAggroLevelTime", 0.0f, 1.0f);
         Debug.Log("[AGGRO LEVEL] AggroLevel: " + aggroLevel);
     }
 
     // on chase mode
-    void ChaseScene(){
+    public void ChaseScene(){
         CancelInvoke();
         Debug.Log("[AGGRO LEVEL] AggroLevel: " + aggroLevel);
     }
 
     // when game is not started, or when finishing level
-    void ResetAggro(){
+    public void ResetAggro(){
         aggroLevel = 0;
     }
 
