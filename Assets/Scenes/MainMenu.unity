@@ -122,6 +122,83 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &22535339
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1958465278}
+    m_Modifications:
+    - target: {fileID: 6799814357228916399, guid: ca7dae123fa01ee469013d2ece4fb513, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8412244607123073274, guid: ca7dae123fa01ee469013d2ece4fb513, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 8412244607123073274, guid: ca7dae123fa01ee469013d2ece4fb513, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 8412244607123073274, guid: ca7dae123fa01ee469013d2ece4fb513, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 8412244607123073274, guid: ca7dae123fa01ee469013d2ece4fb513, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8412244607123073274, guid: ca7dae123fa01ee469013d2ece4fb513, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8412244607123073274, guid: ca7dae123fa01ee469013d2ece4fb513, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8412244607123073274, guid: ca7dae123fa01ee469013d2ece4fb513, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.1486723
+      objectReference: {fileID: 0}
+    - target: {fileID: 8412244607123073274, guid: ca7dae123fa01ee469013d2ece4fb513, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8412244607123073274, guid: ca7dae123fa01ee469013d2ece4fb513, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.98888654
+      objectReference: {fileID: 0}
+    - target: {fileID: 8412244607123073274, guid: ca7dae123fa01ee469013d2ece4fb513, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8412244607123073274, guid: ca7dae123fa01ee469013d2ece4fb513, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8412244607123073274, guid: ca7dae123fa01ee469013d2ece4fb513, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 197.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8412244607123073274, guid: ca7dae123fa01ee469013d2ece4fb513, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8412244607123073274, guid: ca7dae123fa01ee469013d2ece4fb513, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9220446558165955136, guid: ca7dae123fa01ee469013d2ece4fb513, type: 3}
+      propertyPath: m_Name
+      value: HunterUnity
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ca7dae123fa01ee469013d2ece4fb513, type: 3}
 --- !u!1 &75805040
 GameObject:
   m_ObjectHideFlags: 0
@@ -1144,6 +1221,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 1.221, y: -174.997, z: 260.14398}
+--- !u!4 &1079133587 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8412244607123073274, guid: ca7dae123fa01ee469013d2ece4fb513, type: 3}
+  m_PrefabInstance: {fileID: 22535339}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1086472896
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1892,6 +1974,7 @@ Transform:
   m_Children:
   - {fileID: 450751264}
   - {fileID: 1470492898}
+  - {fileID: 1079133587}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1962266128 stripped
