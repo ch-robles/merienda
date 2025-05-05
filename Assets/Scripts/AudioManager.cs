@@ -54,7 +54,7 @@ public class AudioManager : MonoBehaviour
 	{
 		if (instance != null) {
 			if (instance.musicSource != null) {
-				instance.musicSource.Pause();
+				instance.musicSource.Stop();
 				instance.musicSource.clip = instance.menupause;
 				instance.musicSource.Play();
 			}
@@ -67,7 +67,7 @@ public class AudioManager : MonoBehaviour
 	{
 		if (instance != null) {
 			if (instance.musicSource != null) {
-				instance.musicSource.Pause();
+				instance.musicSource.Stop();
 				instance.musicSource.clip = instance.ingame;
 				instance.musicSource.Play();
 			}
@@ -82,7 +82,7 @@ public class AudioManager : MonoBehaviour
         {
             if (instance.musicSource != null)
             {
-                instance.musicSource.Pause();
+                instance.musicSource.Stop();
                 instance.musicSource.clip = instance.aggroOne;
                 instance.musicSource.Play();
             }
@@ -99,7 +99,7 @@ public class AudioManager : MonoBehaviour
         {
             if (instance.musicSource != null)
             {
-                instance.musicSource.Pause();
+                instance.musicSource.Stop();
                 instance.musicSource.clip = instance.aggroTwo;
                 instance.musicSource.Play();
             }
@@ -116,7 +116,7 @@ public class AudioManager : MonoBehaviour
         {
             if (instance.musicSource != null)
             {
-                instance.musicSource.Pause();
+                instance.musicSource.Stop();
                 instance.musicSource.clip = instance.aggroThree;
                 instance.musicSource.Play();
             }

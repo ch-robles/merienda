@@ -123,6 +123,7 @@ public class Manager : MonoBehaviour
 
     public void VillageAbove(){
         aggro.StartLevel();
+        AudioManager.PlayGameMusic();
     }
 
     public void ForestBelow(){
@@ -168,7 +169,7 @@ public class Manager : MonoBehaviour
 
     public void GoToMain()
     {
-        Resume();
+        //Resume();
         SceneManager.LoadSceneAsync(0);
         Debug.Log("GoToMain");
         AudioManager.PlayMenuMusic();

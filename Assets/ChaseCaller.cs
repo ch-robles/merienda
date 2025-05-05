@@ -9,5 +9,7 @@ public class ChaseCaller : MonoBehaviour
         SceneTransition.instance.Chase();
         Manager.instance.ForestBelow();
         Debug.Log("[CHASE CALLER] FELL!");
+
+        AudioManager.PlayAggroOneMusic();
     }
 }
