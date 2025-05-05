@@ -14,6 +14,9 @@ public class Manager : MonoBehaviour
     // [SerializeField] Animator transitionAnim;
     int level = 1;
     bool running = true;
+    bool start = false;
+    [SerializeField] AggroLevel aggro;
+    Vector3 checkpoint;
 
     void Awake()
     {
@@ -54,7 +57,7 @@ public class Manager : MonoBehaviour
         Time.timeScale = 1f;
         GameIsPaused = false;
         ButtonClick();
-        Debug.Log("Resumed");
+        Debug.Log("[MANAGER] Resumed");
     }
 
 
@@ -81,12 +84,6 @@ public class Manager : MonoBehaviour
         Debug.Log("Win");
     }
 
-    public void Draw()
-    {
-        AudioManager.instance.Win();
-        Pause();
-        Debug.Log("Draw");
-    }
 
 
     // testing purp
@@ -99,6 +96,71 @@ public class Manager : MonoBehaviour
         return running;
     }
 
+    // public void RunningLevel(){
+    //     start = true;
+    // }
+
+    // public void EndingLevel(){
+    //     start = false;
+    // }
+
+    public bool GetState(){
+        return start;
+    }
+
+    public void SetState(bool startBool){
+        start = startBool; 
+    }
+
+    public void SetLevel(int levelNo){
+        level = levelNo; 
+    }
+
+    public int GetLevel(){
+        return level;
+    }
+
+    public void VillageAbove(){
+        aggro.StartLevel();
+    }
+
+    public void ForestBelow(){
+        aggro.ChaseScene();
+    }
+
+    public void SetCheckpoint(Vector3 checkpointPos){
+        checkpoint = checkpointPos;
+        Debug.Log("New checkpoint!");
+    }
+
+    public Vector3 GetCheckpoint(){
+        if(start){
+            return checkpoint;
+        } else {
+            switch(level){
+                case 1:
+                    Debug.Log("In Level 1");
+                    checkpoint = new Vector3(224.55f,19.022f,222.74f);
+                    return checkpoint;
+                    break;
+                case 2:
+                    Debug.Log("In Level 2");
+                    checkpoint = new Vector3(0,0,0);
+                    return checkpoint;
+                    break;
+                case 3: 
+                    Debug.Log("In Level 3");
+                    checkpoint = new Vector3(0,0,0);
+                    return checkpoint;
+                    break;
+            }
+        }
+
+        Vector3 defaultPos = new Vector3(0f,0f,0f);
+        return defaultPos;
+        
+    }
+
     //----------------------------//
 
     public void GoToMain()
@@ -107,6 +169,38 @@ public class Manager : MonoBehaviour
         SceneManager.LoadSceneAsync(0);
         Debug.Log("GoToMain");
         AudioManager.PlayMenuMusic();
+    }
+
+    public void GoToTutorial()
+    {
+        Resume();
+        SceneManager.LoadSceneAsync(1);
+        Debug.Log("GoToTutorial");
+        AudioManager.PlayGameMusic();
+    }
+
+    public void GoToLvl1()
+    {
+        Resume();
+        SceneManager.LoadSceneAsync(2);
+        Debug.Log("GoToLVL1");
+        AudioManager.PlayGameMusic();
+    }
+
+    public void GoToLvl2()
+    {
+        Resume();
+        SceneManager.LoadSceneAsync(3);
+        Debug.Log("GoToLVL2");
+        AudioManager.PlayGameMusic();
+    }
+
+    public void GoToLvl3()
+    {
+        Resume();
+        SceneManager.LoadSceneAsync(4);
+        Debug.Log("GoToLVL3");
+        AudioManager.PlayGameMusic();
     }
 
     public void QuitGame()
