@@ -13,6 +13,7 @@ public class MamonHouse : MonoBehaviour
     float Mamon;
     [SerializeField] TextMeshProUGUI UIsubs;
     [SerializeField] TextMeshProUGUI Goalsubs;
+    [SerializeField] GameObject UIobject;
     System.Random rnd = new System.Random();
     string[] MamonSuccess =
     {
@@ -35,17 +36,19 @@ public class MamonHouse : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Mamon = Manager.instance.getMamons();
+        //Mamon = Manager.instance.getMamons();
         subtitle = "What the hell was that...";
         Invoke("DeleteText", 3);
         Debug.Log("[MamonHouseRunning] Mamon House running.");
-        UIsubs.gameObject.SetActive(true);
-        Goalsubs.gameObject.SetActive(true);
+        // UIsubs.gameObject.SetActive(true);
+        // Goalsubs.gameObject.SetActive(true);
     }
 
     // Update is called once per frame
     void Update()
     {
+        Mamon = Manager.instance.getMamons();
+        Debug.Log("[MAMON HOUSE] Mamons Get: " + Manager.instance.getMamons());
         UIsubs.text = subtitle;
         goal = "You need to deliver " + Mamon + " mamon(s).";
         Goalsubs.text = goal; 
@@ -61,6 +64,7 @@ public class MamonHouse : MonoBehaviour
             subtitle = MamonSuccess[rnd.Next(0, MamonSuccess.Length)];
             Invoke("DeleteText", 3);
             Mamon--;
+            Manager.instance.setMamons(Mamon);
             goal = Mamon + " Mamon(s) left to deliver.";
             Destroy(other);
         }
