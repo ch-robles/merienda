@@ -124,10 +124,12 @@ public class Manager : MonoBehaviour
     public void VillageAbove(){
         aggro.StartLevel();
         AudioManager.PlayGameMusic();
+        AggroLevel.instance.StartLevel();
     }
 
     public void ForestBelow(){
-        aggro.ChaseScene();
+        AggroLevel.instance.ChaseScene();
+        SceneTransition.instance.Chase();
     }
 
     public void SetCheckpoint(Vector3 checkpointPos){
