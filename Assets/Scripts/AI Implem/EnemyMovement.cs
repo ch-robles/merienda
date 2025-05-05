@@ -35,7 +35,7 @@ public class EnemyMovement : MonoBehaviour
         while(enabled)
         {
             Agent.SetDestination(Player.transform.position);
-            anim.speed = maxAnimSpeed*(aggroVal/100);
+            anim.speed = 1 + maxAnimSpeed*(aggroVal/100);
             anim.SetBool("hunterWalk", true);
             yield return null;
         }
