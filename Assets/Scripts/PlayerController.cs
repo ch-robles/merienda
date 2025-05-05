@@ -26,8 +26,8 @@ public class PlayerController : MonoBehaviour
     public KeyCode toggleKey = KeyCode.F; // Press F to toggle
 	private bool torchOn = true;
 
-	[Header("Tutorial Settings")]
-	public bool canControl = false;
+	//[Header("Tutorial Settings")]
+	//public bool canControl = false;
 
     // Start is called before the first frame update
     void Start()
@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		if (!canControl) return;
+		//if (!canControl) return;
 
 		float horizontal = Input.GetAxisRaw("Horizontal");
 		float vertical = Input.GetAxisRaw("Vertical");
