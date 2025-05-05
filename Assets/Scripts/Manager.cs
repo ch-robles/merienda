@@ -9,7 +9,8 @@ using UnityEngine.SceneManagement;
 public class Manager : MonoBehaviour
 {
     public static Manager instance;
-    [SerializeField] float Mamons;
+    // [SerializeField] float Mamons;
+    float mamons = 0.0f;
     public static bool GameIsPaused = false;
     // [SerializeField] Animator transitionAnim;
     int level = 1;
@@ -41,7 +42,7 @@ public class Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        Debug.Log("[MANAGER] Mamons Now: " + mamons);
     }
 
     public void Pause()
@@ -133,6 +134,8 @@ public class Manager : MonoBehaviour
         Debug.Log("New checkpoint!");
     }
 
+    
+
     public Vector3 GetCheckpoint(){
         if(start){
             return checkpoint;
@@ -192,7 +195,12 @@ public class Manager : MonoBehaviour
 
     public float getMamons()
     {
-        return (Mamons);
+        return mamons;
+    }
+
+    public void setMamons(float mamonsGet)
+    {
+        mamons = mamonsGet;
     }
 
     // IEnumerator Chase(){
@@ -204,7 +212,7 @@ public class Manager : MonoBehaviour
     //     yield return WaitForSeconds(10);
     //     SceneManager.LoadScene("HuntingGrounds");
     //     transitionAnim.SetTrigger("Start");
-        
+
     // }
 
     /*public void StartGame()
@@ -219,7 +227,7 @@ public class Manager : MonoBehaviour
 
     //----------------------------//
 
-    
+
     //----------------------------//
 
     /*
@@ -234,6 +242,6 @@ public class Manager : MonoBehaviour
     }
 
     */
-    
+
 
 }

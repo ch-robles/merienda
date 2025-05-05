@@ -10,7 +10,7 @@ public class MamonHouse : MonoBehaviour
     string subtitle;
     string goal;
     [SerializeField] Manager manager;
-    int Mamon;
+    float Mamon;
     [SerializeField] TextMeshProUGUI UIsubs;
     [SerializeField] TextMeshProUGUI Goalsubs;
     System.Random rnd = new System.Random();
@@ -35,22 +35,26 @@ public class MamonHouse : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Mamon = Manager.instance.getMamons();
         subtitle = "What the hell was that...";
         Invoke("DeleteText", 3);
-        goal = "You need to deliver " + Mamon + " mamon(s).";
-        
+        Debug.Log("[MamonHouseRunning] Mamon House running.");
+        UIsubs.gameObject.SetActive(true);
+        Goalsubs.gameObject.SetActive(true);
     }
 
     // Update is called once per frame
     void Update()
     {
         UIsubs.text = subtitle;
-        Goalsubs.text = goal;
+        goal = "You need to deliver " + Mamon + " mamon(s).";
+        Goalsubs.text = goal; 
     }
 
     private void OnTriggerEnter(Collider other)
     {
         //subtitle = "test";
+        Debug.Log("[MAMON HOUSE] Annyeonghaseyo.");
         
         if (other.CompareTag("MamonHouse"))
         {
