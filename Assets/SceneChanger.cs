@@ -39,6 +39,13 @@ public class SceneChanger : MonoBehaviour
                 break;
 
             // need ng main menu ditow
+
+            case "Tutorial":
+                Manager.instance.setMamons(0.0f);
+                Manager.instance.VillageAbove();
+                Manager.instance.Resume();
+                break;
+
             case "[TREE TEST] HuntingGrounds":
                 Manager.instance.setMamons(0.0f);
                 Manager.instance.ForestBelow();
