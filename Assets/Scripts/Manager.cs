@@ -57,7 +57,7 @@ public class Manager : MonoBehaviour
         Time.timeScale = 1f;
         GameIsPaused = false;
         ButtonClick();
-        Debug.Log("Resumed");
+        Debug.Log("[MANAGER] Resumed");
     }
 
 
