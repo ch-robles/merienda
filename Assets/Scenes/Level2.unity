@@ -2298,7 +2298,7 @@ GameObject:
   - component: {fileID: 652991920}
   - component: {fileID: 652991919}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Cannons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2331,6 +2331,8 @@ Transform:
   m_LocalPosition: {x: 139.21, y: 25.97, z: 278.96}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4595654920645685}
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 89.692, y: 27.13, z: -185.949}
@@ -7334,6 +7336,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3526873797057679520, guid: 0f1383688c98b69498062499a39bf4ec, type: 3}
   m_PrefabInstance: {fileID: 154331396}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &4595654920645685 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8273429296923607078, guid: 7066ae596e959cd469237290e9319d12, type: 3}
+  m_PrefabInstance: {fileID: 3953739405502454257}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3034883217647824408
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7391,6 +7398,67 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f1383688c98b69498062499a39bf4ec, type: 3}
+--- !u!1001 &3953739405502454257
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 652991920}
+    m_Modifications:
+    - target: {fileID: 1898439031270409178, guid: 7066ae596e959cd469237290e9319d12, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8273429296923607078, guid: 7066ae596e959cd469237290e9319d12, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -24.220016
+      objectReference: {fileID: 0}
+    - target: {fileID: 8273429296923607078, guid: 7066ae596e959cd469237290e9319d12, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.2300129
+      objectReference: {fileID: 0}
+    - target: {fileID: 8273429296923607078, guid: 7066ae596e959cd469237290e9319d12, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 6.070216
+      objectReference: {fileID: 0}
+    - target: {fileID: 8273429296923607078, guid: 7066ae596e959cd469237290e9319d12, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.5578772
+      objectReference: {fileID: 0}
+    - target: {fileID: 8273429296923607078, guid: 7066ae596e959cd469237290e9319d12, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.5570876
+      objectReference: {fileID: 0}
+    - target: {fileID: 8273429296923607078, guid: 7066ae596e959cd469237290e9319d12, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.4344802
+      objectReference: {fileID: 0}
+    - target: {fileID: 8273429296923607078, guid: 7066ae596e959cd469237290e9319d12, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.43549222
+      objectReference: {fileID: 0}
+    - target: {fileID: 8273429296923607078, guid: 7066ae596e959cd469237290e9319d12, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -165.928
+      objectReference: {fileID: 0}
+    - target: {fileID: 8273429296923607078, guid: 7066ae596e959cd469237290e9319d12, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90.104
+      objectReference: {fileID: 0}
+    - target: {fileID: 8273429296923607078, guid: 7066ae596e959cd469237290e9319d12, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 270
+      objectReference: {fileID: 0}
+    - target: {fileID: 9059111801563984351, guid: 7066ae596e959cd469237290e9319d12, type: 3}
+      propertyPath: m_Name
+      value: FattyCannonG02
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7066ae596e959cd469237290e9319d12, type: 3}
 --- !u!1001 &8766533385208845660
 PrefabInstance:
   m_ObjectHideFlags: 0
