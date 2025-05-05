@@ -4800,7 +4800,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: dc9bfca649d4cc1469f3dd18800547ea, type: 3}
 --- !u!114 &1340644471 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2618804247785657210, guid: dc9bfca649d4cc1469f3dd18800547ea, type: 3}
+  m_CorrespondingSourceObject: {fileID: 2171618049175534152, guid: dc9bfca649d4cc1469f3dd18800547ea, type: 3}
   m_PrefabInstance: {fileID: 1340644470}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
@@ -6498,7 +6498,8 @@ PrefabInstance:
       propertyPath: torchPrefab
       value: 
       objectReference: {fileID: 1643838681}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7942181337763925327, guid: da97c4ec80417d94fa58859ba42b7d08, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -6907,7 +6908,7 @@ PrefabInstance:
     - target: {fileID: 3270808245709132304, guid: e9b771f6ac1795a4c98518206d41097b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1340644471}
+      objectReference: {fileID: 0}
     - target: {fileID: 3270808245709132304, guid: e9b771f6ac1795a4c98518206d41097b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
@@ -8054,12 +8055,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a393d3ad451fc324f8fc0417d5160378, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manager: {fileID: 0}
-
+  manager: {fileID: 1340644471}
   UIsubs: {fileID: 650911113}
   Goalsubs: {fileID: 904632001}
   UIobject: {fileID: 2057429109}
-
 --- !u!1001 &2104704088
 PrefabInstance:
   m_ObjectHideFlags: 0

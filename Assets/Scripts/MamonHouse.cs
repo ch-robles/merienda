@@ -37,7 +37,7 @@ public class MamonHouse : MonoBehaviour
     void Start()
     {
         //Mamon = Manager.instance.getMamons();
-        subtitle = "What the hell was that...";
+        subtitle = "Time to deliver these stupid ass mamons...";
         Invoke("DeleteText", 3);
         Debug.Log("[MamonHouseRunning] Mamon House running.");
         // UIsubs.gameObject.SetActive(true);
