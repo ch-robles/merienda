@@ -171,6 +171,38 @@ public class Manager : MonoBehaviour
         AudioManager.PlayMenuMusic();
     }
 
+    public void GoToTutorial()
+    {
+        Resume();
+        SceneManager.LoadSceneAsync(1);
+        Debug.Log("GoToTutorial");
+        AudioManager.PlayGameMusic();
+    }
+
+    public void GoToLvl1()
+    {
+        Resume();
+        SceneManager.LoadSceneAsync(2);
+        Debug.Log("GoToLVL1");
+        AudioManager.PlayGameMusic();
+    }
+
+    public void GoToLvl2()
+    {
+        Resume();
+        SceneManager.LoadSceneAsync(3);
+        Debug.Log("GoToLVL2");
+        AudioManager.PlayGameMusic();
+    }
+
+    public void GoToLvl3()
+    {
+        Resume();
+        SceneManager.LoadSceneAsync(4);
+        Debug.Log("GoToLVL3");
+        AudioManager.PlayGameMusic();
+    }
+
     public void QuitGame()
     {
         ButtonClick();
