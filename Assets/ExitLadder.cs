@@ -13,6 +13,11 @@ public class ExitLadder : MonoBehaviour
             int currentLevel = Manager.instance.GetLevel();
             
             switch(currentLevel){
+                case 0:
+                    //SceneManager.LoadScene("Level1");
+                    SceneChanger.instance.ChangeScene("Level1");
+                    Manager.instance.VillageAbove();
+                    break;
                 case 1:
                     //SceneManager.LoadScene("Level1");
                     SceneChanger.instance.ChangeScene("Level1");

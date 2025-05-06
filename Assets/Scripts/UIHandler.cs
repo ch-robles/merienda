@@ -27,6 +27,26 @@ public class UIHandler : MonoBehaviour
         Manager.instance.GoToMain();
     }
 
+    public void GoToTutorial()
+    {
+        Manager.instance.GoToTutorial();
+    }
+
+    public void GoToLvl1()
+    {
+        Manager.instance.GoToLvl1();
+    }
+
+    public void GoToLvl2()
+    {
+        Manager.instance.GoToLvl2();
+    }
+
+    public void GoToLvl3()
+    {
+        Manager.instance.GoToLvl3();
+    }
+
     public void QuitGame()
     {
         Manager.instance.QuitGame();
