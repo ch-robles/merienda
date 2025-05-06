@@ -180,7 +180,8 @@ public class Manager : MonoBehaviour
     public void GoToTutorial()
     {
         Resume();
-        SceneManager.LoadSceneAsync(1);
+        // SceneManager.LoadSceneAsync(1);
+        SceneChanger.instance.ChangeScene("Tutorial");
         Debug.Log("GoToTutorial");
         AudioManager.PlayGameMusic();
     }
@@ -188,7 +189,8 @@ public class Manager : MonoBehaviour
     public void GoToLvl1()
     {
         Resume();
-        SceneManager.LoadSceneAsync(2);
+        // SceneManager.LoadSceneAsync(2);
+        SceneChanger.instance.ChangeScene("Level1");
         Debug.Log("GoToLVL1");
         AudioManager.PlayGameMusic();
     }
@@ -196,7 +198,8 @@ public class Manager : MonoBehaviour
     public void GoToLvl2()
     {
         Resume();
-        SceneManager.LoadSceneAsync(3);
+        // SceneManager.LoadSceneAsync(3);
+        SceneChanger.instance.ChangeScene("Level2");
         Debug.Log("GoToLVL2");
         AudioManager.PlayGameMusic();
     }
@@ -204,7 +207,8 @@ public class Manager : MonoBehaviour
     public void GoToLvl3()
     {
         Resume();
-        SceneManager.LoadSceneAsync(4);
+        // SceneManager.LoadSceneAsync(4);
+        SceneChanger.instance.ChangeScene("Level3");
         Debug.Log("GoToLVL3");
         AudioManager.PlayGameMusic();
     }

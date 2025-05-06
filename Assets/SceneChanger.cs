@@ -21,6 +21,8 @@ public class SceneChanger : MonoBehaviour
                 Manager.instance.setMamons(5.0f);
                 Manager.instance.VillageAbove();
                 Manager.instance.SetLevel(1);
+                AudioManager.PlayGameMusic();
+
                 Manager.instance.Resume();
                 break;
             
@@ -28,6 +30,7 @@ public class SceneChanger : MonoBehaviour
                 Manager.instance.setMamons(6.0f);
                 Manager.instance.VillageAbove();
                 Manager.instance.SetLevel(2);
+                AudioManager.PlayGameMusic();
                 Manager.instance.Resume();
                 break;
             
@@ -43,6 +46,7 @@ public class SceneChanger : MonoBehaviour
             case "Tutorial":
                 Manager.instance.setMamons(0.0f);
                 Manager.instance.VillageAbove();
+                Manager.instance.SetLevel(0);
                 Manager.instance.Resume();
                 break;
 
