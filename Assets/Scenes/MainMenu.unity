@@ -668,8 +668,25 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Game Assets:\n\nAcronym\r\nAndaSoft\r\nAvionx\r\nBlue Polygon\r\nNobiax
-    / Yughues\r\nPiloto Studio\r\nsheyvan\r"
+  m_text: 'Game Assets:
+
+
+    Acronym
+
+    AndaSoft
+
+    Avionx
+
+    Blue Polygon
+
+    Hippo
+
+    LVKEHOUSE
+
+    Nobiax
+    / Yughues
+
+    Piloto Studio'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7436,8 +7453,23 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\n\nSirMishMash\r\nSlender\r\nSound Effect TV\r\n\rTriForge Assets\r\nVivek
-    Abhishek\r\nyatoimtop"
+  m_text: '
+
+
+    sheyvan
+
+    SirMishMash
+
+    Slender
+
+    Sound Effect TV
+
+    TriForge
+    Assets
+
+    Vivek Abhishek
+
+    yatoimtop'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
