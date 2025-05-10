@@ -5,10 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class ChaseCaller : MonoBehaviour
 {
-    // Start is called before the first frame update
-
     void OnTriggerEnter(Collider other){
+        // SceneTransition.instance.Chase();
+        Manager.instance.ForestBelow();
+        Debug.Log("[CHASE CALLER] FELL!");
 
-        SceneTransition.instance.Chase();
+        AudioManager.PlayAggroOneMusic();
     }
 }

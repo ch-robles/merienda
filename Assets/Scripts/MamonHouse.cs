@@ -10,9 +10,11 @@ public class MamonHouse : MonoBehaviour
     string subtitle;
     string goal;
     [SerializeField] Manager manager;
-    int Mamon;
+    float Mamon;
+   
     [SerializeField] TextMeshProUGUI UIsubs;
     [SerializeField] TextMeshProUGUI Goalsubs;
+    [SerializeField] GameObject UIobject;
     System.Random rnd = new System.Random();
     string[] MamonSuccess =
     {
@@ -35,35 +37,44 @@ public class MamonHouse : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        subtitle = "What the hell was that...";
+        //mamonCounter = GetComponent<MamonCounter>();
+        //Mamon = Manager.instance.getMamons();
+        subtitle = "Time to deliver these stupid ass mamons...";
         Invoke("DeleteText", 3);
-        goal = "You need to deliver " + Mamon + " mamon(s).";
-        
+        Debug.Log("[MamonHouseRunning] Mamon House running.");
+        // UIsubs.gameObject.SetActive(true);
+        // Goalsubs.gameObject.SetActive(true);
     }
 
     // Update is called once per frame
     void Update()
     {
+        Mamon = Manager.instance.getMamons();
+        Debug.Log("[MAMON HOUSE] Mamons Get: " + Manager.instance.getMamons());
         UIsubs.text = subtitle;
-        Goalsubs.text = goal;
+        goal = "You need to deliver " + Mamon + " mamon(s).";
+        Goalsubs.text = goal; 
     }
 
     private void OnTriggerEnter(Collider other)
     {
         //subtitle = "test";
+        Debug.Log("[MAMON HOUSE] Annyeonghaseyo.");
         
         if (other.CompareTag("MamonHouse"))
         {
             subtitle = MamonSuccess[rnd.Next(0, MamonSuccess.Length)];
             Invoke("DeleteText", 3);
             Mamon--;
+            MamonCounter.currentMamon += 1;
+            Manager.instance.setMamons(Mamon);
             goal = Mamon + " Mamon(s) left to deliver.";
             Destroy(other);
         }
 
-        if (other.CompareTag("NoMamon"))
+        if (other.CompareTag("NoMamonHouse"))
         {
-            subtitle = MamonSuccess[rnd.Next(0, NoMamon.Length)];
+            subtitle = NoMamon[rnd.Next(0, NoMamon.Length)];
             Invoke("DeleteText", 3);
         }
     }

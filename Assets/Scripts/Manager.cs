@@ -9,11 +9,15 @@ using UnityEngine.SceneManagement;
 public class Manager : MonoBehaviour
 {
     public static Manager instance;
-    [SerializeField] float Mamons;
+    // [SerializeField] float Mamons;
+    float mamons = 0.0f;
     public static bool GameIsPaused = false;
     // [SerializeField] Animator transitionAnim;
     int level = 1;
     bool running = true;
+    bool start = false;
+    [SerializeField] AggroLevel aggro;
+    Vector3 checkpoint;
 
     void Awake()
     {
@@ -38,7 +42,7 @@ public class Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        Debug.Log("[MANAGER] Mamons Now: " + mamons);
     }
 
     public void Pause()
@@ -54,7 +58,7 @@ public class Manager : MonoBehaviour
         Time.timeScale = 1f;
         GameIsPaused = false;
         ButtonClick();
-        Debug.Log("Resumed");
+        Debug.Log("[MANAGER] Resumed");
     }
 
 
@@ -81,12 +85,6 @@ public class Manager : MonoBehaviour
         Debug.Log("Win");
     }
 
-    public void Draw()
-    {
-        AudioManager.instance.Win();
-        Pause();
-        Debug.Log("Draw");
-    }
 
 
     // testing purp
@@ -99,14 +97,121 @@ public class Manager : MonoBehaviour
         return running;
     }
 
+    // public void RunningLevel(){
+    //     start = true;
+    // }
+
+    // public void EndingLevel(){
+    //     start = false;
+    // }
+
+    public bool GetState(){
+        return start;
+    }
+
+    public void SetState(bool startBool){
+        start = startBool; 
+    }
+
+    public void SetLevel(int levelNo){
+        level = levelNo; 
+    }
+
+    public int GetLevel(){
+        return level;
+    }
+
+    public void VillageAbove(){
+        aggro.StartLevel();
+        AudioManager.PlayGameMusic();
+        AggroLevel.instance.StartLevel();
+    }
+
+    public void ForestBelow(){
+        AggroLevel.instance.ChaseScene();
+        SceneTransition.instance.Chase();
+    }
+
+    public void SetCheckpoint(Vector3 checkpointPos){
+        checkpoint = checkpointPos;
+        Debug.Log("New checkpoint!");
+    }
+
+    
+
+    public Vector3 GetCheckpoint(){
+        if(start){
+            return checkpoint;
+        } else {
+            switch(level){
+                case 1:
+                    Debug.Log("In Level 1");
+                    checkpoint = new Vector3(224.55f,19.022f,222.74f);
+                    return checkpoint;
+                    break;
+                case 2:
+                    Debug.Log("In Level 2");
+                    checkpoint = new Vector3(0,0,0);
+                    return checkpoint;
+                    break;
+                case 3: 
+                    Debug.Log("In Level 3");
+                    checkpoint = new Vector3(0,0,0);
+                    return checkpoint;
+                    break;
+            }
+        }
+
+        Vector3 defaultPos = new Vector3(0f,0f,0f);
+        return defaultPos;
+        
+    }
+
     //----------------------------//
 
     public void GoToMain()
     {
-        Resume();
+        //Resume();
         SceneManager.LoadSceneAsync(0);
+        //LoadingManager.Instance.SwitchToScene(0);
         Debug.Log("GoToMain");
         AudioManager.PlayMenuMusic();
+    }
+
+    public void GoToTutorial()
+    {
+        Resume();
+        // SceneManager.LoadSceneAsync(1);
+        SceneChanger.instance.ChangeScene("Tutorial");
+        Debug.Log("GoToTutorial");
+        AudioManager.PlayGameMusic();
+    }
+
+    public void GoToLvl1()
+    {
+        Resume();
+        // SceneManager.LoadSceneAsync(2);
+        SceneChanger.instance.ChangeScene("Level1");
+        Debug.Log("GoToLVL1");
+        AudioManager.PlayGameMusic();
+    }
+
+    public void GoToLvl2()
+    {
+        Resume();
+        // SceneManager.LoadSceneAsync(3);
+        SceneChanger.instance.ChangeScene("Level2");
+        Debug.Log("GoToLVL2");
+        AudioManager.PlayGameMusic();
+    }
+
+    public void GoToLvl3()
+    {
+        Resume();
+        // SceneManager.LoadSceneAsync(4);
+        SceneChanger.instance.ChangeScene("Level3");
+        Debug.Log("GoToLVL3");
+        AudioManager.PlayGameMusic();
     }
 
     public void QuitGame()
@@ -130,7 +235,12 @@ public class Manager : MonoBehaviour
 
     public float getMamons()
     {
-        return (Mamons);
+        return mamons;
+    }
+
+    public void setMamons(float mamonsGet)
+    {
+        mamons = mamonsGet;
     }
 
     // IEnumerator Chase(){
@@ -142,7 +252,7 @@ public class Manager : MonoBehaviour
     //     yield return WaitForSeconds(10);
     //     SceneManager.LoadScene("HuntingGrounds");
     //     transitionAnim.SetTrigger("Start");
-        
+
     // }
 
     /*public void StartGame()
@@ -157,7 +267,7 @@ public class Manager : MonoBehaviour
 
     //----------------------------//
 
-    
+
     //----------------------------//
 
     /*
@@ -172,6 +282,6 @@ public class Manager : MonoBehaviour
     }
 
     */
-    
+
 
 }
