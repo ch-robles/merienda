@@ -8,6 +8,10 @@ TagManager:
   - Trees
   - MamonHouse
   - NoMamonHouse
+  - Torch
+  - Boundary
+  - Ladder
+  - Tutorial
   layers:
   - Default
   - TransparentFX

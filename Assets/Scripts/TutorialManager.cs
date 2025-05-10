@@ -147,7 +147,7 @@ public class TutorialManager : MonoBehaviour
                 break;
 
             case TutorialStage.Objective:
-                currentText = "Objective: Follow the dirtpath across to your first delivery";
+                currentText = "Objective: Follow the dirtpath across to your first delivery \nPress E multiple times once you reached the ladder";
                 break;
 
             case TutorialStage.Interact:
