@@ -11,6 +11,7 @@ public class MamonHouse : MonoBehaviour
     string goal;
     [SerializeField] Manager manager;
     float Mamon;
+   
     [SerializeField] TextMeshProUGUI UIsubs;
     [SerializeField] TextMeshProUGUI Goalsubs;
     [SerializeField] GameObject UIobject;
@@ -36,6 +37,7 @@ public class MamonHouse : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //mamonCounter = GetComponent<MamonCounter>();
         //Mamon = Manager.instance.getMamons();
         subtitle = "Time to deliver these stupid ass mamons...";
         Invoke("DeleteText", 3);
@@ -64,6 +66,7 @@ public class MamonHouse : MonoBehaviour
             subtitle = MamonSuccess[rnd.Next(0, MamonSuccess.Length)];
             Invoke("DeleteText", 3);
             Mamon--;
+            MamonCounter.currentMamon += 1;
             Manager.instance.setMamons(Mamon);
             goal = Mamon + " Mamon(s) left to deliver.";
             Destroy(other);
