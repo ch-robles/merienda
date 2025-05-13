@@ -26,8 +26,8 @@ public class PlayerController : MonoBehaviour
     public KeyCode toggleKey = KeyCode.F; // Press F to toggle
 	private bool torchOn = true;
 
-	// [Header("Tutorial Settings")]
-	// public bool canControl = false;
+	//[Header("Tutorial Settings")]
+	//public bool canControl = false;
 
     // Start is called before the first frame update
     void Start()
@@ -106,7 +106,6 @@ public class PlayerController : MonoBehaviour
 		velocity.y += gravity * Time.deltaTime;
 
 		controller.Move(velocity * Time.deltaTime);
-		// Debug.Log("[PLAYER CONTROLLER] Time:" + Time.deltaTime);
 
 	}
 }

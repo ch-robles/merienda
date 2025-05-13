@@ -18,6 +18,10 @@ public class AudioManager : MonoBehaviour
     public AudioClip death;
     public AudioClip win;
 
+    public AudioClip aggroOne;
+    public AudioClip aggroTwo;
+    public AudioClip aggroThree;
+
 
     public static AudioManager instance;
 
@@ -50,7 +54,7 @@ public class AudioManager : MonoBehaviour
 	{
 		if (instance != null) {
 			if (instance.musicSource != null) {
-				instance.musicSource.Pause();
+				instance.musicSource.Stop();
 				instance.musicSource.clip = instance.menupause;
 				instance.musicSource.Play();
 			}
@@ -63,7 +67,7 @@ public class AudioManager : MonoBehaviour
 	{
 		if (instance != null) {
 			if (instance.musicSource != null) {
-				instance.musicSource.Pause();
+				instance.musicSource.Stop();
 				instance.musicSource.clip = instance.ingame;
 				instance.musicSource.Play();
 			}
@@ -71,6 +75,57 @@ public class AudioManager : MonoBehaviour
 			Debug.LogError("Unavailable MusicPlayer component");
 		}
 	}
+
+    static public void PlayAggroOneMusic()
+    {
+        if (instance != null)
+        {
+            if (instance.musicSource != null)
+            {
+                instance.musicSource.Stop();
+                instance.musicSource.clip = instance.aggroOne;
+                instance.musicSource.Play();
+            }
+        }
+        else
+        {
+            Debug.LogError("Unavailable MusicPlayer component");
+        }
+    }
+
+    static public void PlayAggroTwoMusic()
+    {
+        if (instance != null)
+        {
+            if (instance.musicSource != null)
+            {
+                instance.musicSource.Stop();
+                instance.musicSource.clip = instance.aggroTwo;
+                instance.musicSource.Play();
+            }
+        }
+        else
+        {
+            Debug.LogError("Unavailable MusicPlayer component");
+        }
+    }
+
+    static public void PlayAggroThreeMusic()
+    {
+        if (instance != null)
+        {
+            if (instance.musicSource != null)
+            {
+                instance.musicSource.Stop();
+                instance.musicSource.clip = instance.aggroThree;
+                instance.musicSource.Play();
+            }
+        }
+        else
+        {
+            Debug.LogError("Unavailable MusicPlayer component");
+        }
+    }
 
     //---------------------------//
 

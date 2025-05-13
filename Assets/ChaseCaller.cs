@@ -6,8 +6,10 @@ using UnityEngine.SceneManagement;
 public class ChaseCaller : MonoBehaviour
 {
     void OnTriggerEnter(Collider other){
-        SceneTransition.instance.Chase();
+        // SceneTransition.instance.Chase();
         Manager.instance.ForestBelow();
         Debug.Log("[CHASE CALLER] FELL!");
+
+        AudioManager.PlayAggroOneMusic();
     }
 }

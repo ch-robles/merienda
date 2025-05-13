@@ -840,4 +840,4 @@ MonoBehaviour:
   player: {fileID: 3327775744856701231, guid: da97c4ec80417d94fa58859ba42b7d08, type: 3}
   playerVCam: {fileID: 0}
   playerMovementScript: {fileID: 0}
-  jumpscareSound: {fileID: 8300000, guid: bb8718f9dc286344a9e05bf7324774a8, type: 3}
+  jumpscareSound: {fileID: 8300000, guid: 413928a553057284c8dd07f77f5049d6, type: 3}

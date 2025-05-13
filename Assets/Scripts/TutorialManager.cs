@@ -11,6 +11,7 @@ public class TutorialManager : MonoBehaviour
     public TMP_Text tutorialText;
     //private int tutorialStage = 0;
     public TMP_Text warningText;
+    public GameObject pauseMenuUI;
     //public RectTransform letterboxTop;
     //public RectTransform letterboxBottom;
 
@@ -24,6 +25,7 @@ public class TutorialManager : MonoBehaviour
         Move,
         Jump,
         Torch,
+        Pause,
         Objective,
         Interact,
         Complete
@@ -37,6 +39,7 @@ public class TutorialManager : MonoBehaviour
     private bool moved = false;
     private bool jumped = false;
     private bool torched = false;
+    private bool paused = false;
     private bool interacted = false;
 
     void Start()
@@ -49,6 +52,12 @@ public class TutorialManager : MonoBehaviour
 
     void Update()
     {
+        Debug.Log("TutorialManager Update is running");
+        if (Moved())
+        {
+            Debug.Log("Moved detected on Update()");
+        }
+
         switch (currentStage)
         {
             case TutorialStage.LookAround:
@@ -78,6 +87,14 @@ public class TutorialManager : MonoBehaviour
             case TutorialStage.Torch:
                 if (Torched())
                 {
+                    currentStage = TutorialStage.Pause;
+                    UpdateTutorialText();
+                }
+                break;
+
+            case TutorialStage.Pause:
+                if (Paused())
+                {   
                     currentStage = TutorialStage.Objective;
                     UpdateTutorialText();
                 }
@@ -104,30 +121,37 @@ public class TutorialManager : MonoBehaviour
 
     private void UpdateTutorialText()
     {
+        currentText = "Use the mouse to look around";
+
         switch (currentStage)
         {
+
             case TutorialStage.LookAround:
                 currentText = "Use the mouse to look around";
                 break;
 
             case TutorialStage.Move:
-                currentText += "\nUse WASD to move";
+                currentText = "Use WASD to move";
                 break;
 
             case TutorialStage.Jump:
-                currentText += "\nPress the Spacebar to jump";
+                currentText = "Press the Spacebar to jump";
                 break;
 
             case TutorialStage.Torch:
-                currentText += "\nPress F to toggle the Torch";
+                currentText = "Press F to toggle the Torch";
+                break;
+            
+            case TutorialStage.Pause:
+                currentText = "Press Esc key to Pause the game";
                 break;
 
             case TutorialStage.Objective:
-                currentText += "\nObjective: Follow the dirtpath across to your first delivery";
+                currentText = "Objective: Follow the dirtpath across to your first delivery \nPress E multiple times once you reached the ladder";
                 break;
 
             case TutorialStage.Interact:
-                currentText += "\nPress E to interact";
+                currentText = "Press E to interact";
                 break;
 
             case TutorialStage.Complete:
@@ -142,7 +166,8 @@ public class TutorialManager : MonoBehaviour
     {
         if (other.CompareTag("Ladder") && currentStage == TutorialStage.Objective)
         {
-            currentText += "\nPress E to interact";
+            currentStage = TutorialStage.Interact;
+            UpdateTutorialText();
         }
 
         if (other.CompareTag("Boundary"))
@@ -158,7 +183,14 @@ public class TutorialManager : MonoBehaviour
 
     bool Moved()
     {
-        return Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D);
+        //return Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D);
+        bool isMoving = Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || 
+                    Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D);
+        if (isMoving)
+        {
+            Debug.Log("Player is moving");
+        }
+        return isMoving;
     }
 
     bool Jumped()
@@ -169,6 +201,11 @@ public class TutorialManager : MonoBehaviour
     bool Torched()
     {
         return Input.GetKey(KeyCode.F);
+    }
+
+    bool Paused()
+    {
+        return Input.GetKey(KeyCode.Escape);
     }
 
     bool Interacted()

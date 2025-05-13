@@ -18,12 +18,25 @@ public class JumpscareTrigger : MonoBehaviour
     {
         if (!hasTriggered && other.CompareTag("Player")) {
             hasTriggered = true;
-            TriggerJumpscare(other.gameObject);
+            // TriggerJumpscare(other.gameObject);
+            EndScene(other.gameObject);
         }
+    }
+
+    void EndScene(GameObject tikbalang)
+    {
+        TriggerJumpscare(tikbalang);
+        // TriggerJumpscare(null);
+        // SceneChanger.instance.ChangeScene("MainMenu");
     }
 
     void TriggerJumpscare(GameObject player)
     {
+        if (player == null)
+        {
+            return;
+        }
+
         // Disable enemy
         if (enemy != null) 
             enemy.SetActive(false);

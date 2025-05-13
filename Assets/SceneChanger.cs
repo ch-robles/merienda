@@ -14,24 +14,32 @@ public class SceneChanger : MonoBehaviour
     }
 
     public void ChangeScene(string scene){
-        SceneManager.LoadScene(scene);
         
         switch(scene){
             case "Level1":
+                LoadingManager.Instance.SwitchToScene(2);
+
                 Manager.instance.setMamons(5.0f);
                 Manager.instance.VillageAbove();
                 Manager.instance.SetLevel(1);
+                AudioManager.PlayGameMusic();
+
                 Manager.instance.Resume();
                 break;
             
             case "Level2":
+                LoadingManager.Instance.SwitchToScene(3);
+
                 Manager.instance.setMamons(6.0f);
                 Manager.instance.VillageAbove();
                 Manager.instance.SetLevel(2);
+                AudioManager.PlayGameMusic();
                 Manager.instance.Resume();
                 break;
             
             case "Level3":
+                LoadingManager.Instance.SwitchToScene(4);
+
                 Manager.instance.setMamons(7.0f);
                 Manager.instance.VillageAbove();
                 Manager.instance.SetLevel(3);
@@ -39,13 +47,27 @@ public class SceneChanger : MonoBehaviour
                 break;
 
             // need ng main menu ditow
+
+            case "Tutorial":
+                LoadingManager.Instance.SwitchToScene(1);
+
+                Manager.instance.setMamons(0.0f);
+                Manager.instance.VillageAbove();
+                Manager.instance.SetLevel(0);
+                Manager.instance.Resume();
+                break;
+
             case "[TREE TEST] HuntingGrounds":
+                SceneManager.LoadScene(scene);
+
                 Manager.instance.setMamons(0.0f);
                 Manager.instance.ForestBelow();
                 Manager.instance.Resume();
                 break;
-            
+
             default:
+                SceneManager.LoadScene(scene);
+
                 Manager.instance.setMamons(0.0f);
                 Manager.instance.ForestBelow();
                 AggroLevel.instance.ResetAggro();
