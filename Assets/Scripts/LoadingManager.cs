@@ -42,10 +42,9 @@ public class LoadingManager : MonoBehaviour
             yield return null;
         }
 
-        yield return new WaitForSeconds(0.2f);
-        progressBar.value = 0;
+        yield return new WaitForSeconds(0.5f);
         loadingScreenObject.SetActive(false);
-        
+
     }
 
 
