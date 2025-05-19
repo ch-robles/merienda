@@ -11,6 +11,7 @@ public class MamonHouse : MonoBehaviour
     string goal;
     [SerializeField] Manager manager;
     float Mamon;
+    int knockCounter;
    
     [SerializeField] TextMeshProUGUI UIsubs;
     [SerializeField] TextMeshProUGUI Goalsubs;
@@ -37,13 +38,10 @@ public class MamonHouse : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //mamonCounter = GetComponent<MamonCounter>();
-        //Mamon = Manager.instance.getMamons();
-        subtitle = "Time to deliver these stupid ass mamons...";
+        UIsubs.text = "Time to deliver these stupid ass mamons...";
         Invoke("DeleteText", 3);
         Debug.Log("[MamonHouseRunning] Mamon House running.");
-        // UIsubs.gameObject.SetActive(true);
-        // Goalsubs.gameObject.SetActive(true);
+        knockCounter = 0;
     }
 
     // Update is called once per frame
@@ -61,21 +59,46 @@ public class MamonHouse : MonoBehaviour
         //subtitle = "test";
         Debug.Log("[MAMON HOUSE] Annyeonghaseyo.");
         
-        if (other.CompareTag("MamonHouse"))
+        if (other.CompareTag("MamonHouse") || other.CompareTag("NoMamonHouse"))
         {
-            subtitle = MamonSuccess[rnd.Next(0, MamonSuccess.Length)];
-            Invoke("DeleteText", 3);
-            Mamon--;
-            MamonCounter.currentMamon += 1;
-            Manager.instance.setMamons(Mamon);
-            goal = Mamon + " Mamon(s) left to deliver.";
-            Destroy(other);
+            if(knockCounter == 0)   {
+                subtitle = "Press E to knock.";
+                Invoke("DeleteText", 3);
+                knockCounter++;
+            }
         }
+    }
 
-        if (other.CompareTag("NoMamonHouse"))
+    private void OnTriggerStay(Collider other)
+    {
+        if (Input.GetKey(KeyCode.E))
         {
-            subtitle = NoMamon[rnd.Next(0, NoMamon.Length)];
-            Invoke("DeleteText", 3);
+            Debug.Log("E is pressed BTW");
+
+            if (other.CompareTag("MamonHouse"))
+            {
+                subtitle = MamonSuccess[rnd.Next(0, MamonSuccess.Length)];
+                Invoke("DeleteText", 3);
+                Mamon--;
+                MamonCounter.currentMamon += 1;
+                Manager.instance.setMamons(Mamon);
+                goal = Mamon + " Mamon(s) left to deliver.";
+                Destroy(other);
+            }
+
+            if (other.CompareTag("NoMamonHouse"))
+            {
+                subtitle = NoMamon[rnd.Next(0, NoMamon.Length)];
+                Invoke("DeleteText", 3);
+                knockCounter++;
+
+                if(knockCounter >= 5) {
+                    subtitle = "I'm not even going to respond anymore. Go bother someone else!";
+                    Invoke("DeleteText", 3);
+                    Destroy(other);
+                    knockCounter = 0;
+                }
+            }
         }
     }
 
