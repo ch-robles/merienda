@@ -17,7 +17,8 @@ public class SceneChanger : MonoBehaviour
         
         switch(scene){
             case "Level1":
-                LoadingManager.Instance.SwitchToScene(2);
+                //LoadingManager.Instance.SwitchToScene(2);
+                SceneManager.LoadSceneAsync(2);
 
                 Manager.instance.setMamons(5.0f);
                 Manager.instance.VillageAbove();
@@ -28,7 +29,8 @@ public class SceneChanger : MonoBehaviour
                 break;
             
             case "Level2":
-                LoadingManager.Instance.SwitchToScene(3);
+                //LoadingManager.Instance.SwitchToScene(3);
+                SceneManager.LoadSceneAsync(3);
 
                 Manager.instance.setMamons(6.0f);
                 Manager.instance.VillageAbove();
@@ -39,6 +41,7 @@ public class SceneChanger : MonoBehaviour
             
             case "Level3":
                 LoadingManager.Instance.SwitchToScene(4);
+                //SceneManager.LoadSceneAsync(4);
 
                 Manager.instance.setMamons(7.0f);
                 Manager.instance.VillageAbove();
@@ -49,7 +52,8 @@ public class SceneChanger : MonoBehaviour
             // need ng main menu ditow
 
             case "Tutorial":
-                LoadingManager.Instance.SwitchToScene(1);
+                //LoadingManager.Instance.SwitchToScene(1);
+                SceneManager.LoadSceneAsync(1);
 
                 Manager.instance.setMamons(0.0f);
                 Manager.instance.VillageAbove();
@@ -71,7 +75,7 @@ public class SceneChanger : MonoBehaviour
                 Manager.instance.setMamons(0.0f);
                 Manager.instance.ForestBelow();
                 AggroLevel.instance.ResetAggro();
-                Manager.instance.QuitGame();
+                Manager.instance.Resume();
                 break;
         }
        
