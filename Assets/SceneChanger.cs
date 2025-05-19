@@ -17,8 +17,8 @@ public class SceneChanger : MonoBehaviour
         
         switch(scene){
             case "Level1":
-                LoadingManager.Instance.SwitchToScene(2);
-
+                //LoadingManager.Instance.SwitchToScene(2);
+                SceneManager.LoadSceneAsync(2);
                 Manager.instance.setMamons(5.0f);
                 Manager.instance.VillageAbove();
                 Manager.instance.SetLevel(1);
@@ -28,8 +28,8 @@ public class SceneChanger : MonoBehaviour
                 break;
             
             case "Level2":
-                LoadingManager.Instance.SwitchToScene(3);
-
+                //LoadingManager.Instance.SwitchToScene(3);
+                SceneManager.LoadSceneAsync(3);
                 Manager.instance.setMamons(6.0f);
                 Manager.instance.VillageAbove();
                 Manager.instance.SetLevel(2);
@@ -49,8 +49,8 @@ public class SceneChanger : MonoBehaviour
             // need ng main menu ditow
 
             case "Tutorial":
-                LoadingManager.Instance.SwitchToScene(1);
-
+                //LoadingManager.Instance.SwitchToScene(1);
+                SceneManager.LoadSceneAsync(1);
                 Manager.instance.setMamons(0.0f);
                 Manager.instance.VillageAbove();
                 Manager.instance.SetLevel(0);
