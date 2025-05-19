@@ -11,6 +11,7 @@ public class JumpscareTrigger : MonoBehaviour
     public CinemachineVirtualCamera playerVCam;
     public PlayerController playerMovementScript;// Movement script to disable
     public AudioClip jumpscareSound;  // Assign in inspector
+    public GameObject deathPanel;
 
     private bool hasTriggered = false;
 
@@ -20,6 +21,8 @@ public class JumpscareTrigger : MonoBehaviour
             hasTriggered = true;
             // TriggerJumpscare(other.gameObject);
             EndScene(other.gameObject);
+            Manager.GameIsPaused = true;
+            StartCoroutine(StartDeathPanel());
         }
     }
 
@@ -80,5 +83,11 @@ public class JumpscareTrigger : MonoBehaviour
             var comp = vcam.GetCinemachineComponent<CinemachineComposer>();
             if (comp != null) comp.m_TrackedObjectOffset = Vector3.zero;
         } else Debug.LogWarning("No camera found in jumpscare prefab!");
+    }
+
+    IEnumerator StartDeathPanel()
+    {
+        yield return new WaitForSeconds(1f);
+        deathPanel.SetActive(true);
     }
 }
