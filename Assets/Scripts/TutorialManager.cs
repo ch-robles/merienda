@@ -26,6 +26,7 @@ public class TutorialManager : MonoBehaviour
         Jump,
         Torch,
         Pause,
+        Resume,
         Objective,
         Interact,
         Complete
@@ -41,6 +42,9 @@ public class TutorialManager : MonoBehaviour
     private bool torched = false;
     private bool paused = false;
     private bool interacted = false;
+    private int fCount = 0;
+    private float pauseCooldown = 0.3f; // seconds
+    private float lastPauseTime = 0f;
 
     void Start()
     {
@@ -95,6 +99,14 @@ public class TutorialManager : MonoBehaviour
             case TutorialStage.Pause:
                 if (Paused())
                 {   
+                    currentStage = TutorialStage.Resume;
+                    UpdateTutorialText();
+                }
+                break;
+
+            case TutorialStage.Resume:
+                if (Resume())
+                {
                     currentStage = TutorialStage.Objective;
                     UpdateTutorialText();
                 }
@@ -139,15 +151,19 @@ public class TutorialManager : MonoBehaviour
                 break;
 
             case TutorialStage.Torch:
-                currentText = "Press F to toggle the Torch";
+                currentText = "Double press F to toggle the Torch for the first time\nPress F once if Torch is previously activated";
                 break;
             
             case TutorialStage.Pause:
                 currentText = "Press Esc key to Pause the game";
                 break;
 
+            case TutorialStage.Resume:
+                currentText = "Press Esc key again to resume";
+                break;
+
             case TutorialStage.Objective:
-                currentText = "Objective: Follow the dirtpath across to your first delivery \nPress E multiple times once you reached the ladder";
+                currentText = "Objective: Follow the torch path across to your first delivery \nPress E once you reached the ladder";
                 break;
 
             case TutorialStage.Interact:
@@ -200,12 +216,32 @@ public class TutorialManager : MonoBehaviour
 
     bool Torched()
     {
-        return Input.GetKey(KeyCode.F);
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            fCount++;
+
+            if (fCount == 2)
+            {
+                fCount = 0;
+                return true;
+            }
+        }
+        return false;
     }
 
     bool Paused()
     {
-        return Input.GetKey(KeyCode.Escape);
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            lastPauseTime = Time.time; // record when Pause happened
+            return true;
+        }
+        return false;
+    }
+
+    bool Resume()
+    {
+        return Input.GetKeyDown(KeyCode.Escape);
     }
 
     bool Interacted()

@@ -12,6 +12,7 @@ TagManager:
   - Boundary
   - Ladder
   - Tutorial
+  - Platform
   layers:
   - Default
   - TransparentFX

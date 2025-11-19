@@ -426,7 +426,7 @@ GameObject:
   - component: {fileID: 3418014726953004749}
   m_Layer: 0
   m_Name: OakBigTree01_pr
-  m_TagString: Untagged
+  m_TagString: Trees
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -462,24 +462,24 @@ LODGroup:
   serializedVersion: 2
   m_LocalReferencePoint: {x: -1.5896244, y: 18.760677, z: 1.0013332}
   m_Size: 37.920937
-  m_FadeMode: 0
+  m_FadeMode: 1
   m_AnimateCrossFading: 0
   m_LastLODIsBillboard: 0
   m_LODs:
-  - screenRelativeHeight: 0.98318994
+  - screenRelativeHeight: 0.92865723
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 8250954239297173379}
     - renderer: {fileID: 0}
-  - screenRelativeHeight: 0.5636367
+  - screenRelativeHeight: 0.8221105
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 8934149682223108290}
-  - screenRelativeHeight: 0.26932108
+  - screenRelativeHeight: 0.6759558
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 4201504807563828866}
-  - screenRelativeHeight: 0.15477775
+  - screenRelativeHeight: 0.54407513
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 3084317301103864826}

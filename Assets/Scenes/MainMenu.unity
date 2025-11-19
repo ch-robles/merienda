@@ -2767,7 +2767,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1549827541056641608
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4303,18 +4303,6 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 821301766960225678}
         m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
-        m_MethodName: ButtonClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 821301766960225678}
-        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
         m_MethodName: GoToLvl2
         m_Mode: 1
         m_Arguments:
@@ -4575,18 +4563,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 821301766960225678}
-        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
-        m_MethodName: ButtonClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 821301766960225678}
         m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
         m_MethodName: GoToLvl3
@@ -6096,18 +6072,6 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 821301766960225678}
         m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
-        m_MethodName: ButtonClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 821301766960225678}
-        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
         m_MethodName: GoToLvl1
         m_Mode: 1
         m_Arguments:
@@ -6977,18 +6941,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 821301766960225678}
-        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
-        m_MethodName: ButtonClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 821301766960225678}
         m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
         m_MethodName: GoToTutorial

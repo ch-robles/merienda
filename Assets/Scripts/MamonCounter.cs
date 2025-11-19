@@ -9,6 +9,7 @@ public class MamonCounter : MonoBehaviour
     [SerializeField] public int goalMamon = 0;
     public GameObject winUI;
     public GameObject overlay;
+    bool levelCompleted = false;
 
     // Start is called before the first frame update
     void Start()
@@ -19,13 +20,14 @@ public class MamonCounter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (currentMamon == goalMamon)
+        if ((currentMamon == goalMamon) && !levelCompleted)
         {
             Manager.instance.Pause();
             overlay.SetActive(false)
 ;            winUI.SetActive(true);
             currentMamon = 0;
             goalMamon = 0;
+            levelCompleted = true;
         }
     }
 }
