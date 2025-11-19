@@ -42,7 +42,7 @@ public class Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("[MANAGER] Mamons Now: " + mamons);
+
     }
 
     public void Pause()
@@ -171,47 +171,61 @@ public class Manager : MonoBehaviour
 
     public void GoToMain()
     {
-        //Resume();
         SceneManager.LoadSceneAsync(0);
+        AggroLevel.instance.ResetAggro();
         //LoadingManager.Instance.SwitchToScene(0);
         Debug.Log("GoToMain");
         AudioManager.PlayMenuMusic();
+        ButtonClick();
     }
 
     public void GoToTutorial()
     {
         Resume();
         // SceneManager.LoadSceneAsync(1);
-        SceneChanger.instance.ChangeScene("Tutorial");
+        SceneManager.LoadSceneAsync(1);
         Debug.Log("GoToTutorial");
+        VillageAbove();
+        SetLevel(0);
+
         AudioManager.PlayGameMusic();
+        ButtonClick();
     }
 
     public void GoToLvl1()
     {
         Resume();
-        // SceneManager.LoadSceneAsync(2);
-        SceneChanger.instance.ChangeScene("Level1");
+        SceneManager.LoadSceneAsync(2);
         Debug.Log("GoToLVL1");
+        VillageAbove();
+        SetLevel(1);
+
         AudioManager.PlayGameMusic();
+        ButtonClick();
     }
 
     public void GoToLvl2()
     {
         Resume();
-        // SceneManager.LoadSceneAsync(3);
-        SceneChanger.instance.ChangeScene("Level2");
+        SceneManager.LoadSceneAsync(3);
         Debug.Log("GoToLVL2");
+        VillageAbove();
+        SetLevel(2);
+
         AudioManager.PlayGameMusic();
+        ButtonClick();
     }
 
     public void GoToLvl3()
     {
         Resume();
-        // SceneManager.LoadSceneAsync(4);
-        SceneChanger.instance.ChangeScene("Level3");
+        SceneManager.LoadSceneAsync(4);
         Debug.Log("GoToLVL3");
+        VillageAbove();
+        SetLevel(3);
+
         AudioManager.PlayGameMusic();
+        ButtonClick();
     }
 
     public void QuitGame()
@@ -219,6 +233,7 @@ public class Manager : MonoBehaviour
         ButtonClick();
         Application.Quit();
         Debug.Log("Quit");
+        ButtonClick();
     }
 
 
@@ -231,17 +246,19 @@ public class Manager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         // OnRaceStart();
         Debug.Log("Restart");
+        ButtonClick();
     }
 
+    /*
     public float getMamons()
     {
         return mamons;
     }
 
-    public void setMamons(float mamonsGet)
+    public void setMamons(int mamonsGet)
     {
         mamons = mamonsGet;
-    }
+    }*/
 
     // IEnumerator Chase(){
     //     // // play animations here

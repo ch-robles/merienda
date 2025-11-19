@@ -7,14 +7,21 @@ using UnityEngine.UI;
 
 public class MamonHouse : MonoBehaviour
 {
-    string subtitle;
+    public int currentMamon = 0;
+    [SerializeField] public int goalMamon = 0;
+    public int finalMamon = 0;
+    public GameObject winUi;
+    public GameObject UiObject;
+
+
+    //==============
+
     string goal;
-    [SerializeField] Manager manager;
-    float Mamon;
-   
-    [SerializeField] TextMeshProUGUI UIsubs;
-    [SerializeField] TextMeshProUGUI Goalsubs;
-    [SerializeField] GameObject UIobject;
+    string subtitle;
+
+    [SerializeField] TextMeshProUGUI GoalSubs;
+    [SerializeField] TextMeshProUGUI UiSubs;
+
     System.Random rnd = new System.Random();
     string[] MamonSuccess =
     {
@@ -23,12 +30,12 @@ public class MamonHouse : MonoBehaviour
         "Thought I would die of hunger at this point",
         "Thanks!",
         "I almost thought you were eaten at this point already",
-        "The mamon's already cold bruh",
+        "The mamon's already cold",
         "Didn't think I'd be able to eat before the day ends"
     };
     string[] NoMamon =
     {
-        "Who the hell wants your mamon?!",
+        "Who wants your mamon?!",
         "Didn't order no mamon",
         "Get away!!",
         "You won't fool me."
@@ -39,21 +46,25 @@ public class MamonHouse : MonoBehaviour
     {
         //mamonCounter = GetComponent<MamonCounter>();
         //Mamon = Manager.instance.getMamons();
-        subtitle = "Time to deliver these stupid ass mamons...";
-        Invoke("DeleteText", 3);
-        Debug.Log("[MamonHouseRunning] Mamon House running.");
         // UIsubs.gameObject.SetActive(true);
         // Goalsubs.gameObject.SetActive(true);
+
+        finalMamon = goalMamon;
+
+        goal = "You need to deliver " + goalMamon + " mamon(s).";
+        GoalSubs.text = goal;
+
+        subtitle = "Time to deliver these mamons...";
+        UiSubs.text = subtitle;
+
+        Invoke("DeleteText", 3);
+        Debug.Log("[MamonHouseRunning] Mamon House running.");
     }
 
     // Update is called once per frame
     void Update()
     {
-        Mamon = Manager.instance.getMamons();
-        Debug.Log("[MAMON HOUSE] Mamons Get: " + Manager.instance.getMamons());
-        UIsubs.text = subtitle;
-        goal = "You need to deliver " + Mamon + " mamon(s).";
-        Goalsubs.text = goal; 
+        //UIsubs.text = subtitle;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -63,24 +74,42 @@ public class MamonHouse : MonoBehaviour
         
         if (other.CompareTag("MamonHouse"))
         {
+            currentMamon += 1;
+            goalMamon -= 1;
+
+            goal = goalMamon + " Mamon(s) left to deliver.";
+            GoalSubs.text = goal;
+
             subtitle = MamonSuccess[rnd.Next(0, MamonSuccess.Length)];
+            UiSubs.text = subtitle;
+
             Invoke("DeleteText", 3);
-            Mamon--;
-            MamonCounter.currentMamon += 1;
-            Manager.instance.setMamons(Mamon);
-            goal = Mamon + " Mamon(s) left to deliver.";
+
+            if (currentMamon == finalMamon)
+            {
+                Manager.instance.Win();
+                UiObject.SetActive(false); 
+                winUi.SetActive(true);
+                currentMamon = 0;
+                goalMamon = 0;
+                finalMamon = 0;
+            }
+
             Destroy(other);
         }
 
         if (other.CompareTag("NoMamonHouse"))
         {
             subtitle = NoMamon[rnd.Next(0, NoMamon.Length)];
+            UiSubs.text = subtitle;
             Invoke("DeleteText", 3);
+            Destroy(other);
         }
     }
 
     void DeleteText()
     {
         subtitle = "";
+        UiSubs.text = subtitle;
     }
 }
