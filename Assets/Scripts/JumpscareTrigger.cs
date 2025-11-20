@@ -13,6 +13,7 @@ public class JumpscareTrigger : MonoBehaviour
     public AudioClip jumpscareSound;  // Assign in inspector
 
     public GameObject defeatPanel;
+    public GameObject uiPanel;
 
     private bool hasTriggered = false;
 
@@ -22,7 +23,7 @@ public class JumpscareTrigger : MonoBehaviour
             hasTriggered = true;
             // TriggerJumpscare(other.gameObject);
             EndScene(other.gameObject);
-
+            uiPanel.SetActive(false);
             Invoke("DefeatPanel", 4);
         }
     }
