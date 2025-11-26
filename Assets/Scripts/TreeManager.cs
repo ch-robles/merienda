@@ -11,18 +11,18 @@ public class TreeManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        taggedObjects = GameObject.FindGameObjectsWithTag("Trees");
+        /*taggedObjects = GameObject.FindGameObjectsWithTag("Trees");
         foreach (GameObject obj in taggedObjects)
         {
             lodGroup = obj.GetComponent<LODGroup>();
             lodGroup.ForceLOD(4);
-        }
+        }*/
     }
 
     // Update is called once per frame
     void Update()
     {
-        foreach (GameObject obj in taggedObjects)
+        /*foreach (GameObject obj in taggedObjects)
         {
             lodGroup = obj.GetComponent<LODGroup>();
 
@@ -49,6 +49,6 @@ public class TreeManager : MonoBehaviour
             {
                 lodGroup.ForceLOD(4);
             }
-        }
+        }*/
     }
 }

@@ -76,6 +76,21 @@ public class AudioManager : MonoBehaviour
 		}
 	}
 
+    static public void PlayNoMusic()
+    {
+        if (instance != null)
+        {
+            if (instance.musicSource != null)
+            {
+                instance.musicSource.Stop();
+            }
+        }
+        else
+        {
+            Debug.LogError("Unavailable MusicPlayer component");
+        }
+    }
+
     static public void PlayAggroOneMusic()
     {
         if (instance != null)
