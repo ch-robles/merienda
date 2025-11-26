@@ -1739,17 +1739,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc9bfca649d4cc1469f3dd18800547ea, type: 3}
---- !u!114 &1600544170 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7443378783134656570, guid: dc9bfca649d4cc1469f3dd18800547ea, type: 3}
-  m_PrefabInstance: {fileID: 1600544169}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92f4564c0f600a845a49e8d2cbfc5e0c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1766908034
 GameObject:
   m_ObjectHideFlags: 0
@@ -2245,20 +2234,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 821301766960225678}
         m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
-        m_MethodName: ButtonClick
+        m_MethodName: QuitGame
         m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1600544170}
-        m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
-        m_MethodName: ChangeScene
-        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -7767,7 +7744,7 @@ SceneRoots:
   - {fileID: 1766908036}
   - {fileID: 1036025623}
   - {fileID: 1958465278}
+  - {fileID: 1112194525}
   - {fileID: 1086472896}
   - {fileID: 1600544169}
-  - {fileID: 1112194525}
   - {fileID: 3198472690768535610}

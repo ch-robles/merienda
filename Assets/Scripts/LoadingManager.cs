@@ -10,6 +10,8 @@ public class LoadingManager : MonoBehaviour
     public static LoadingManager Instance;
     public GameObject loadingScreenObject;
     public Slider progressBar;
+    bool isNoMusicActiveOnce = false;
+    bool isLoadingActiveOnce = false;
 
     // Start is called before the first frame update
     void Start()
@@ -28,30 +30,63 @@ public class LoadingManager : MonoBehaviour
     
     public void SwitchToScene(int id)
     {
-        loadingScreenObject.SetActive(true);
-        progressBar.value = 0;
+        //loadingScreenObject.SetActive(true);
+        //progressBar.value = 0;
+        
         StartCoroutine(SwitchToSceneAsync(id));
     }
 
     IEnumerator SwitchToSceneAsync(int id)
     {
+        isNoMusicActiveOnce = true;
+
+        loadingScreenObject.SetActive(true);
+        progressBar.value = 0;
+
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(id);
-        while (!asyncLoad.isDone)
+        asyncLoad.allowSceneActivation = false;
+
+        while (asyncLoad.progress < 0.9f)
         {
             progressBar.value = asyncLoad.progress;
             yield return null;
         }
 
-        yield return new WaitForSeconds(0.2f);
-        progressBar.value = 0;
+        progressBar.value = 1f;
+
+        yield return new WaitForEndOfFrame();
+
+        // Activate scene
+        asyncLoad.allowSceneActivation = true;
+
+        while (!asyncLoad.isDone)
+            yield return null;
+
         loadingScreenObject.SetActive(false);
-        
+
+        if (!loadingScreenObject.activeInHierarchy)
+        {
+            isLoadingActiveOnce = true;
+        }
+
+
+
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (isLoadingActiveOnce && isNoMusicActiveOnce)
+        {
+            AudioManager.PlayGameMusic();
+            Manager.instance.VillageAbove();
+            isNoMusicActiveOnce = false;
+            isLoadingActiveOnce = false;
+        }
+        else if (isNoMusicActiveOnce)
+        {
+            AudioManager.PlayNoMusic();
+        }
     }
 }
