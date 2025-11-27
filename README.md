@@ -14,7 +14,7 @@ A 3D platformer game following the story of a delivery rider exploring a village
 
 
 
-## 🎥 Gameplay Previews
+## 🎥 Game Previews
 
 ### Main Menu
 
