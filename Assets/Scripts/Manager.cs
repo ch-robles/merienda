@@ -171,7 +171,8 @@ public class Manager : MonoBehaviour
 
     public void GoToMain()
     {
-        SceneManager.LoadSceneAsync(0);
+        //SceneManager.LoadSceneAsync(0);
+        LoadingManager.Instance.SwitchToScene(0);
         AggroLevel.instance.ResetAggro();
         //LoadingManager.Instance.SwitchToScene(0);
         Debug.Log("GoToMain");
@@ -183,7 +184,8 @@ public class Manager : MonoBehaviour
     {
         Resume();
         // SceneManager.LoadSceneAsync(1);
-        SceneManager.LoadSceneAsync(1);
+        //SceneManager.LoadSceneAsync(1);
+        LoadingManager.Instance.SwitchToScene(1);
         Debug.Log("GoToTutorial");
         //VillageAbove();
         SetLevel(0);
